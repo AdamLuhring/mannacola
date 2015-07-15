@@ -14,6 +14,7 @@ class Game {
     var players = [AbleToPlay]()
     var goals: [Goal] = [Goal(), Goal()]
     var lastAssignedPlayerNumber: Int = 1
+    var turnCount: Int = 0
     
     init () {
         // Register players!  Do this using a separate class and dependency injection
@@ -87,6 +88,18 @@ class Game {
         return nextReceptacle
     }
     
+    func getSideForPlayer(player: AbleToPlay) -> Side {
+        let playerNumber = player.playerNumber
+        
+        return self.sides[playerNumber]
+    }
+    
+    func getGoalForPlayer(player: AbleToPlay) -> Goal {
+        let playerNumber = player.playerNumber
+        
+        return self.goals[playerNumber]
+    }
+    
     func getOpponentOf(player: AbleToPlay) -> AbleToPlay {
         let playerNumber = player.playerNumber
         
@@ -95,6 +108,16 @@ class Game {
         } else {
             return self.players[1]
         }
+    }
+    
+    func giveTurnToPlayer(player: AbleToPlay) {
+        let currentState = try! BoardState(fromPlayerPerspective: player, sides: self.sides, goals: self.goals)
+        
+        // Increment turn count
+        self.turnCount++
+        
+        // Tell the next player that it's his turn, and provide him with the current board state
+        player.hasReceivedTurn(currentState)
     }
 }
 

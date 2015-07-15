@@ -28,7 +28,6 @@ class MovingPile {
         
         return self.count
     }
-
 }
 
 enum MovingPileError: ErrorType {

@@ -14,6 +14,15 @@ protocol AbleToPlay {
     var game: Game { get }
     var playerNumber: Int { get }
     
-    func hasReceivedTurn()
-    func emptiesPocket(pocketPositionNumber: Int)
+    func hasReceivedTurn(currentState: BoardState) -> Int
+}
+
+extension AbleToPlay {
+    func selectsOwnPocketNumbered(pocketNumber: Int) {
+        do {
+            try self.game.emptyPocketForPlayer(self, pocketNumber: pocketNumber)
+        } catch {
+            print("Something went wrong when player selected a pocket.")
+        }
+    }
 }

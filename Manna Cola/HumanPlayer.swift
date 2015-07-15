@@ -8,30 +8,19 @@
 
 import Foundation
 
-
 class HumanPlayer: AbleToPlay {
-    var opponent: AbleToPlay?
+    var opponent: AbleToPlay? = nil
     let game: Game
     let playerNumber: Int
     
     init (game: Game) {
-        self.opponent = nil
         self.game = game
         self.playerNumber = game.getNextAssignablePlayerNumber()
     }
     
-    func hasReceivedTurn() {
+    func hasReceivedTurn(currentState: BoardState) -> Int {
+        let pocketSelection: Int = 1
         
-        return
-    }
-    
-    func emptiesPocket(pocketNumber: Int) {
-        do {
-            try self.game.emptyPocketForPlayer(self, pocketNumber: pocketNumber)
-        } catch {
-            // HANDLE THIS CASE!
-        }
-        
-        return
+        return pocketSelection
     }
 }
