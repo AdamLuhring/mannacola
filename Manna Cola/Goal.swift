@@ -13,9 +13,4 @@ class Goal: AbleToReceiveStones {
     var count: Int = 0
     let receptacleType = ReceptacleType.Goal
     let position: Int = 0
-    var owner: AbleToPlay?
-    
-    init (owner: AbleToPlay) {
-        self.owner = owner
-    }
 }

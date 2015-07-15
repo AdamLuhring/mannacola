@@ -10,9 +10,7 @@ import Foundation
 
 
 protocol AbleToPlay {
-    var pocketSet: [Pocket] { get set }
-    var goal: Goal? { get set }
-    var opponent: AbleToPlay? { get }
+    var opponent: AbleToPlay? { get set }
     var game: Game { get }
     var playerNumber: Int { get }
     

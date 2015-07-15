@@ -16,10 +16,10 @@ class MovingPile {
         self.count = count
     }
     
-    func depositTo(inout receptacle: AbleToReceiveStones) -> Int {
+    func depositTo(inout receptacle: AbleToReceiveStones) throws -> Int {
         if self.count < 1 {
             // The pile is empty, can't do anything
-            print("Pile is empty! Nothing to do.")
+            throw MovingPileError.NothingToDeposit
         } else {
             // Transfer a stone from the moving pile to the receptacle
             receptacle.count = receptacle.count + 1
@@ -29,4 +29,8 @@ class MovingPile {
         return self.count
     }
 
+}
+
+enum MovingPileError: ErrorType {
+    case NothingToDeposit
 }

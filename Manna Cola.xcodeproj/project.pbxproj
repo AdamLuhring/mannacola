@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		37C516401B55E47C00613033 /* Side.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37C5163F1B55E47C00613033 /* Side.swift */; };
+		37C516421B569E1A00613033 /* PlayerRegistrar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37C516411B569E1A00613033 /* PlayerRegistrar.swift */; };
 		37D816031B4DA7EC00BA1AB1 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37D816021B4DA7EC00BA1AB1 /* AppDelegate.swift */; };
 		37D816051B4DA7EC00BA1AB1 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37D816041B4DA7EC00BA1AB1 /* ViewController.swift */; };
 		37D816081B4DA7EC00BA1AB1 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 37D816061B4DA7EC00BA1AB1 /* Main.storyboard */; };
@@ -41,6 +43,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		37C5163F1B55E47C00613033 /* Side.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Side.swift; sourceTree = "<group>"; };
+		37C516411B569E1A00613033 /* PlayerRegistrar.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PlayerRegistrar.swift; sourceTree = "<group>"; };
 		37D815FF1B4DA7EC00BA1AB1 /* Manna Cola.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Manna Cola.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		37D816021B4DA7EC00BA1AB1 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		37D816041B4DA7EC00BA1AB1 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -143,13 +147,15 @@
 		37D816301B4DC31E00BA1AB1 /* Classes and Protocols */ = {
 			isa = PBXGroup;
 			children = (
-				37D816311B4DC34700BA1AB1 /* Pocket.swift */,
-				37D8163F1B5029A300BA1AB1 /* Goal.swift */,
-				37D8163B1B50280800BA1AB1 /* MovingPile.swift */,
-				37D816351B4DDAD200BA1AB1 /* Game.swift */,
-				37D816391B4DDC9B00BA1AB1 /* HumanPlayer.swift */,
 				37D816371B4DDC7C00BA1AB1 /* AbleToPlay.swift */,
 				37D8163D1B50296F00BA1AB1 /* AbleToReceiveStones.swift */,
+				37C516411B569E1A00613033 /* PlayerRegistrar.swift */,
+				37D816351B4DDAD200BA1AB1 /* Game.swift */,
+				37D8163F1B5029A300BA1AB1 /* Goal.swift */,
+				37D816391B4DDC9B00BA1AB1 /* HumanPlayer.swift */,
+				37D8163B1B50280800BA1AB1 /* MovingPile.swift */,
+				37D816311B4DC34700BA1AB1 /* Pocket.swift */,
+				37C5163F1B55E47C00613033 /* Side.swift */,
 			);
 			name = "Classes and Protocols";
 			sourceTree = "<group>";
@@ -286,6 +292,8 @@
 			files = (
 				37D816381B4DDC7C00BA1AB1 /* AbleToPlay.swift in Sources */,
 				37D816361B4DDAD200BA1AB1 /* Game.swift in Sources */,
+				37C516401B55E47C00613033 /* Side.swift in Sources */,
+				37C516421B569E1A00613033 /* PlayerRegistrar.swift in Sources */,
 				37D8163E1B50296F00BA1AB1 /* AbleToReceiveStones.swift in Sources */,
 				37D816051B4DA7EC00BA1AB1 /* ViewController.swift in Sources */,
 				37D8163A1B4DDC9B00BA1AB1 /* HumanPlayer.swift in Sources */,

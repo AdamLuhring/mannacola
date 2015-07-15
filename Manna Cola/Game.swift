@@ -10,13 +10,22 @@ import Foundation
 
 
 class Game {
-    var player1: AbleToPlay
-    var player2: AbleToPlay
+    var sides = [Side]()
+    var players = [AbleToPlay]()
+    var goals: [Goal] = [Goal(), Goal()]
     var lastAssignedPlayerNumber: Int = 1
     
-    init (player1: AbleToPlay, player2: AbleToPlay) {
-        self.player1 = player1
-        self.player2 = player2
+    init () {
+        // Register players!  Do this using a separate class and dependency injection
+        (players[1], players[2]) = PlayerRegistrar.getTwoPlayers(self)
+        
+        // Set up sides
+        let numberOfSides = 2
+        let numberOfPocketsPerSide = 6
+        
+        for sideNumber in 1...numberOfSides {
+            self.sides[sideNumber] = Side(id: sideNumber, numberOfPockets: numberOfPocketsPerSide)
+        }
     }
     
     func getNextAssignablePlayerNumber() -> Int {
@@ -26,53 +35,71 @@ class Game {
         return numberAssignment
     }
     
-    func getReceptacleAfter(receptacle: AbleToReceiveStones) throws -> AbleToReceiveStones {
-        var nextReceptacle: AbleToReceiveStones? = nil
-        let currentPosition = receptacle.position
+    func emptyPocketForPlayer(player: AbleToPlay, pocketNumber: Int) throws {
+        let pocket = self.sides[player.playerNumber].pockets[pocketNumber]
+        let countOfSelectedPocket = pocket.count
+        var currentReceptacle: AbleToReceiveStones
+        var pile: MovingPile
         
-        guard let receptacleOwner = receptacle.owner else {
-            throw GameError.OwnerNotSet
+        if countOfSelectedPocket > 0 {
+            pile = pocket.empty()
+        } else {
+            throw GameError.CannotActOnAnEmptyPocket
         }
+        
+        // Move currentReceptacle to next position
+        try! currentReceptacle = getReceptacleAfter(pocket, ofPlayer: player)
+        
+        while pile.count > 0 {
+            
+            // Make deposit to currentReceptacle
+            try! pile.depositTo(&currentReceptacle)
+            
+            // Move currentReceptacle to next position
+            try! currentReceptacle = getReceptacleAfter(pocket, ofPlayer: player)
+        }
+        
+        return
+    }
+
+    func getReceptacleAfter(receptacle: AbleToReceiveStones, ofPlayer: AbleToPlay) throws -> AbleToReceiveStones {
+        var nextReceptacle: AbleToReceiveStones
+        let currentPosition = receptacle.position
+        let sideOfPlayer = self.sides[ofPlayer.playerNumber]
 
         switch receptacle.receptacleType {
         case .Pocket:
             if currentPosition >= 1 && currentPosition <= 5 {
                 // If position is 1-5, increment position by one
-                nextReceptacle = receptacleOwner.pocketSet[currentPosition + 1]
+                nextReceptacle = sideOfPlayer.pockets[currentPosition + 1]
             } else if currentPosition == 6 {
                 // If position is 6, next position is pocket owner's goal
-                nextReceptacle = receptacleOwner.goal
+                nextReceptacle = self.goals[ofPlayer.playerNumber]
             } else {
                 throw GameError.InvalidPocketPosition
             }
         case .Goal:
             // If position is goal, next position is opponent's pocket number 1
-            if let opponent = receptacleOwner.opponent {
-                nextReceptacle = opponent.pocketSet[1]
-            } else {
-                throw GameError.NoOpponentForReceptacleOwner
-            }
+            let opponentPlayerNumber = getOpponentOf(ofPlayer).playerNumber
+            nextReceptacle = self.sides[opponentPlayerNumber].pockets[1]
         }
         
-        if nextReceptacle == nil {
-            throw GameError.FailedToSetNextReceptacle
-        }
-        
-        return nextReceptacle!
+        return nextReceptacle
     }
     
     func getOpponentOf(player: AbleToPlay) -> AbleToPlay {
-        if player.playerNumber == self.player1.playerNumber {
-            return self.player2
+        let playerNumber = player.playerNumber
+        
+        if playerNumber == 1 {
+            return self.players[2]
         } else {
-            return self.player1
+            return self.players[1]
         }
     }
 }
 
 enum GameError: ErrorType {
-    case OwnerNotSet
     case InvalidPocketPosition
     case FailedToSetNextReceptacle
-    case NoOpponentForReceptacleOwner
+    case CannotActOnAnEmptyPocket
 }

@@ -11,9 +11,8 @@ import Foundation
 
 protocol AbleToReceiveStones {
     var count: Int { get set }
-    var receptacleType: ReceptacleType { get }
     var position: Int { get }
-    var owner: AbleToPlay? { get }
+    var receptacleType: ReceptacleType { get }
 }
 
 enum ReceptacleType {

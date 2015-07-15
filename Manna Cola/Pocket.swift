@@ -11,7 +11,6 @@ import Foundation
 
 class Pocket : AbleToReceiveStones {
     var count: Int = 4
-    let owner: AbleToPlay? = nil
     let position: Int
     let receptacleType = ReceptacleType.Pocket
     
@@ -25,15 +24,5 @@ class Pocket : AbleToReceiveStones {
         self.count = 0
         
         return pile
-    }
-    
-    static func initializePocketSet(numberOfPockets: Int) -> [Pocket] {
-        let pocketSet = [Pocket(position: 1)]
-        
-//        for pocketNumber in 1...numberOfPockets {
-//            pocketSet[pocketNumber] = Pocket(position: 2)
-//        }
-        
-        return pocketSet
     }
 }
