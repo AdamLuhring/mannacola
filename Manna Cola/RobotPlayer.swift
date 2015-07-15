@@ -1,14 +1,14 @@
 //
-//  HumanPlayer.swift
+//  RobotPlayer.swift
 //  Manna Cola
 //
-//  Created by Dan Luhring on 7/8/15.
+//  Created by Dan Luhring on 7/15/15.
 //  Copyright © 2015 Dan Luhring. All rights reserved.
 //
 
 import Foundation
 
-class HumanPlayer: AbleToPlay {
+class RobotPlayer: AbleToPlay {
     var opponent: AbleToPlay? = nil
     let game: Game
     let playerNumber: Int
@@ -19,8 +19,15 @@ class HumanPlayer: AbleToPlay {
     }
     
     func hasReceivedTurn(state: BoardState) -> Int {
-        let pocketSelection: Int = 1
+        let myPockets = state.mySide.pockets
         
-        return pocketSelection
+        // Always choose left most pocket available
+        for pocketNumber in 1...6 {
+            if myPockets[pocketNumber].count > 0 {
+                return pocketNumber
+            }
+        }
+        
+        return 0
     }
 }
