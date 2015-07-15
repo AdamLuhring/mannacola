@@ -15,6 +15,7 @@ class Game {
     var goals: [Goal] = [Goal(), Goal()]
     var lastAssignedPlayerNumber: Int = 1
     var turnCount: Int = 0
+    var playerWithCurrentTurn: AbleToPlay?
     
     init () {
         // Register players!  Do this using a separate class and dependency injection
@@ -27,6 +28,9 @@ class Game {
         for sideNumber in 1...numberOfSides {
             self.sides[sideNumber] = Side(id: sideNumber, numberOfPockets: numberOfPocketsPerSide)
         }
+        
+        // Set current turn to player 1
+        self.playerWithCurrentTurn = players[1]
     }
     
     func getNextAssignablePlayerNumber() -> Int {
@@ -115,6 +119,9 @@ class Game {
         
         // Increment turn count
         self.turnCount++
+        
+        // Switch turns
+        self.playerWithCurrentTurn = player
         
         // Tell the next player that it's his turn, and provide him with the current board state
         player.hasReceivedTurn(currentState)

@@ -72,5 +72,9 @@ class ViewController: UIViewController {
     @IBOutlet weak var p2pos6: UIButton!
     @IBAction func p2SelectedPos6(sender: AnyObject) {
     }
+    
+    func setButtonText(button: UIButton, text: String) {
+        button.setTitle(text, forState: UIControlState.Normal)
+    }
 }
 
