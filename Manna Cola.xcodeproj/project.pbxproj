@@ -14,6 +14,13 @@
 		37D8160D1B4DA7EC00BA1AB1 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 37D8160B1B4DA7EC00BA1AB1 /* LaunchScreen.storyboard */; };
 		37D816181B4DA7ED00BA1AB1 /* Manna_ColaTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37D816171B4DA7ED00BA1AB1 /* Manna_ColaTests.swift */; };
 		37D816231B4DA7ED00BA1AB1 /* Manna_ColaUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37D816221B4DA7ED00BA1AB1 /* Manna_ColaUITests.swift */; };
+		37D816321B4DC34700BA1AB1 /* Pocket.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37D816311B4DC34700BA1AB1 /* Pocket.swift */; };
+		37D816361B4DDAD200BA1AB1 /* Game.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37D816351B4DDAD200BA1AB1 /* Game.swift */; };
+		37D816381B4DDC7C00BA1AB1 /* AbleToPlay.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37D816371B4DDC7C00BA1AB1 /* AbleToPlay.swift */; };
+		37D8163A1B4DDC9B00BA1AB1 /* HumanPlayer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37D816391B4DDC9B00BA1AB1 /* HumanPlayer.swift */; };
+		37D8163C1B50280800BA1AB1 /* MovingPile.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37D8163B1B50280800BA1AB1 /* MovingPile.swift */; };
+		37D8163E1B50296F00BA1AB1 /* AbleToReceiveStones.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37D8163D1B50296F00BA1AB1 /* AbleToReceiveStones.swift */; };
+		37D816401B5029A300BA1AB1 /* Goal.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37D8163F1B5029A300BA1AB1 /* Goal.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -47,6 +54,13 @@
 		37D8161E1B4DA7ED00BA1AB1 /* Manna ColaUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Manna ColaUITests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		37D816221B4DA7ED00BA1AB1 /* Manna_ColaUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Manna_ColaUITests.swift; sourceTree = "<group>"; };
 		37D816241B4DA7ED00BA1AB1 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		37D816311B4DC34700BA1AB1 /* Pocket.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Pocket.swift; sourceTree = "<group>"; };
+		37D816351B4DDAD200BA1AB1 /* Game.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Game.swift; sourceTree = "<group>"; };
+		37D816371B4DDC7C00BA1AB1 /* AbleToPlay.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AbleToPlay.swift; sourceTree = "<group>"; };
+		37D816391B4DDC9B00BA1AB1 /* HumanPlayer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HumanPlayer.swift; sourceTree = "<group>"; };
+		37D8163B1B50280800BA1AB1 /* MovingPile.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MovingPile.swift; sourceTree = "<group>"; };
+		37D8163D1B50296F00BA1AB1 /* AbleToReceiveStones.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AbleToReceiveStones.swift; sourceTree = "<group>"; };
+		37D8163F1B5029A300BA1AB1 /* Goal.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Goal.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -97,6 +111,7 @@
 		37D816011B4DA7EC00BA1AB1 /* Manna Cola */ = {
 			isa = PBXGroup;
 			children = (
+				37D816301B4DC31E00BA1AB1 /* Classes and Protocols */,
 				37D816021B4DA7EC00BA1AB1 /* AppDelegate.swift */,
 				37D816041B4DA7EC00BA1AB1 /* ViewController.swift */,
 				37D816061B4DA7EC00BA1AB1 /* Main.storyboard */,
@@ -123,6 +138,20 @@
 				37D816241B4DA7ED00BA1AB1 /* Info.plist */,
 			);
 			path = "Manna ColaUITests";
+			sourceTree = "<group>";
+		};
+		37D816301B4DC31E00BA1AB1 /* Classes and Protocols */ = {
+			isa = PBXGroup;
+			children = (
+				37D816311B4DC34700BA1AB1 /* Pocket.swift */,
+				37D8163F1B5029A300BA1AB1 /* Goal.swift */,
+				37D8163B1B50280800BA1AB1 /* MovingPile.swift */,
+				37D816351B4DDAD200BA1AB1 /* Game.swift */,
+				37D816391B4DDC9B00BA1AB1 /* HumanPlayer.swift */,
+				37D816371B4DDC7C00BA1AB1 /* AbleToPlay.swift */,
+				37D8163D1B50296F00BA1AB1 /* AbleToReceiveStones.swift */,
+			);
+			name = "Classes and Protocols";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -255,8 +284,15 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				37D816381B4DDC7C00BA1AB1 /* AbleToPlay.swift in Sources */,
+				37D816361B4DDAD200BA1AB1 /* Game.swift in Sources */,
+				37D8163E1B50296F00BA1AB1 /* AbleToReceiveStones.swift in Sources */,
 				37D816051B4DA7EC00BA1AB1 /* ViewController.swift in Sources */,
+				37D8163A1B4DDC9B00BA1AB1 /* HumanPlayer.swift in Sources */,
 				37D816031B4DA7EC00BA1AB1 /* AppDelegate.swift in Sources */,
+				37D816321B4DC34700BA1AB1 /* Pocket.swift in Sources */,
+				37D816401B5029A300BA1AB1 /* Goal.swift in Sources */,
+				37D8163C1B50280800BA1AB1 /* MovingPile.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -481,6 +517,7 @@
 				37D816291B4DA7ED00BA1AB1 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		37D8162A1B4DA7ED00BA1AB1 /* Build configuration list for PBXNativeTarget "Manna ColaTests" */ = {
 			isa = XCConfigurationList;
@@ -489,6 +526,7 @@
 				37D8162C1B4DA7ED00BA1AB1 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		37D8162D1B4DA7ED00BA1AB1 /* Build configuration list for PBXNativeTarget "Manna ColaUITests" */ = {
 			isa = XCConfigurationList;
@@ -497,6 +535,7 @@
 				37D8162F1B4DA7ED00BA1AB1 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
