@@ -11,11 +11,11 @@ import Foundation
 
 class Game {
     var sides = [Side]()
-    var players = [AbleToPlay]()
+    var players = [AnyPlayer]()
     var goals: [Goal] = [Goal(), Goal()]
     var lastAssignedPlayerNumber: Int = 1
     var turnCount: Int = 0
-    var playerWithCurrentTurn: AbleToPlay?
+    var playerWithCurrentTurn: AnyPlayer?
     
     init () {
         // Register players!  Do this using a separate class and dependency injection
@@ -40,7 +40,7 @@ class Game {
         return numberAssignment
     }
     
-    func emptyPocketForPlayer(player: AbleToPlay, pocketNumber: Int) throws {
+    func emptyPocketForPlayer(player: AnyPlayer, pocketNumber: Int) throws {
         let pocket = self.sides[player.playerNumber].pockets[pocketNumber]
         let countOfSelectedPocket = pocket.count
         var currentReceptacle: AbleToReceiveStones
@@ -67,7 +67,7 @@ class Game {
         return
     }
 
-    func getReceptacleAfter(receptacle: AbleToReceiveStones, ofPlayer: AbleToPlay) throws -> AbleToReceiveStones {
+    func getReceptacleAfter(receptacle: AbleToReceiveStones, ofPlayer: AnyPlayer) throws -> AbleToReceiveStones {
         var nextReceptacle: AbleToReceiveStones
         let currentPosition = receptacle.position
         let sideOfPlayer = self.sides[ofPlayer.playerNumber]
@@ -92,19 +92,19 @@ class Game {
         return nextReceptacle
     }
     
-    func getSideForPlayer(player: AbleToPlay) -> Side {
+    func getSideForPlayer(player: AnyPlayer) -> Side {
         let playerNumber = player.playerNumber
         
         return self.sides[playerNumber]
     }
     
-    func getGoalForPlayer(player: AbleToPlay) -> Goal {
+    func getGoalForPlayer(player: AnyPlayer) -> Goal {
         let playerNumber = player.playerNumber
         
         return self.goals[playerNumber]
     }
     
-    func getOpponentOf(player: AbleToPlay) -> AbleToPlay {
+    func getOpponentOf(player: AnyPlayer) -> AnyPlayer {
         let playerNumber = player.playerNumber
         
         if playerNumber == 1 {
@@ -114,7 +114,7 @@ class Game {
         }
     }
     
-    func giveTurnToPlayer(player: AbleToPlay) {
+    func giveTurnToPlayer(player: AnyPlayer) {
         let currentState = try! BoardState(fromPlayerPerspective: player, sides: self.sides, goals: self.goals)
         
         // Increment turn count

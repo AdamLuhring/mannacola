@@ -8,8 +8,8 @@
 
 import Foundation
 
-class RobotPlayer: AbleToPlay {
-    var opponent: AbleToPlay? = nil
+class RobotPlayer: AnyPlayer {
+    var opponent: AnyPlayer? = nil
     let game: Game
     let playerNumber: Int
     

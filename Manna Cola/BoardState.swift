@@ -9,13 +9,13 @@
 import Foundation
 
 class BoardState {
-    let playerPerspective: AbleToPlay
+    let playerPerspective: AnyPlayer
     let mySide: Side
     let myGoal: Goal
     var opponentSide: Side? = nil
     var opponentGoal: Goal? = nil
     
-    init (fromPlayerPerspective: AbleToPlay, sides: [Side], goals: [Goal]) throws {
+    init (fromPlayerPerspective: AnyPlayer, sides: [Side], goals: [Goal]) throws {
         self.playerPerspective = fromPlayerPerspective
         
         let playerNumber = self.playerPerspective.playerNumber

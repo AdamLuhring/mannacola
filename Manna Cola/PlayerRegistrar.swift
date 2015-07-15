@@ -9,8 +9,8 @@
 import Foundation
 
 class PlayerRegistrar {
-    static func getTwoPlayers(forGame: Game) -> (AbleToPlay, AbleToPlay) {
-        var player1: AbleToPlay, player2: AbleToPlay
+    static func getTwoPlayers(forGame: Game) -> (AnyPlayer, AnyPlayer) {
+        var player1: AnyPlayer, player2: AnyPlayer
         
         // load the two players
         player1 = HumanPlayer(game: forGame)
