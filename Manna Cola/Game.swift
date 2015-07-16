@@ -15,10 +15,12 @@ class Game {
     
     init () {
         self.board = Board(numberOfSides: 2)
+        let playerOne: Player, playerTwo: Player
         
         // Add two players
-        self.players.append(Player(type: PlayerType.Human, id: 0))
-        self.players.append(Player(type: PlayerType.AI, id: 1, strategy: LeftStrategy()))
+        (playerOne, playerTwo) = Player.registerTwoPlayers()
+        self.players.append(playerOne)
+        self.players.append(playerTwo)
         
         let numberOfPlayerWithFirstTurn = 0 // Use this as a config, or set it to random one day
         

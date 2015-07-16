@@ -18,6 +18,13 @@ class Player {
         self.id = id
         self.strategy = strategy
     }
+    
+    static func registerTwoPlayers() -> (Player, Player) {
+        let playerOne = Player(type: PlayerType.Human, id: 0)
+        let playerTwo = Player(type: PlayerType.Human, id: 1)
+        
+        return (playerOne, playerTwo)
+    }
 }
 
 enum PlayerType {
