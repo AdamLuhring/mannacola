@@ -18,7 +18,7 @@ class Game {
         
         // Add two players
         self.players.append(Player(type: PlayerType.Human, id: 0))
-        self.players.append(Player(type: PlayerType.Human, id: 1))
+        self.players.append(Player(type: PlayerType.AI, id: 1, strategy: LeftStrategy()))
         
         let numberOfPlayerWithFirstTurn = 0 // Use this as a config, or set it to random one day
         

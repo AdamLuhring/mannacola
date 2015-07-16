@@ -34,7 +34,7 @@ class ViewController: UIViewController {
         do {
             try game.board.someoneHasSelectedPocket(6, OnSideNumber: 0)
         } catch {
-            print("Bad selection.")
+            displayGameOverAlert()
         }
         
         turnIsEnding()
@@ -45,7 +45,7 @@ class ViewController: UIViewController {
         do {
             try game.board.someoneHasSelectedPocket(5, OnSideNumber: 0)
         } catch {
-            print("Bad selection.")
+            displayGameOverAlert()
         }
         
         turnIsEnding()
@@ -56,7 +56,7 @@ class ViewController: UIViewController {
         do {
             try game.board.someoneHasSelectedPocket(4, OnSideNumber: 0)
         } catch {
-            print("Bad selection.")
+            displayGameOverAlert()
         }
         
         turnIsEnding()
@@ -67,7 +67,7 @@ class ViewController: UIViewController {
         do {
             try game.board.someoneHasSelectedPocket(3, OnSideNumber: 0)
         } catch {
-            print("Bad selection.")
+            displayGameOverAlert()
         }
         
         turnIsEnding()
@@ -78,7 +78,7 @@ class ViewController: UIViewController {
         do {
             try game.board.someoneHasSelectedPocket(2, OnSideNumber: 0)
         } catch {
-            print("Bad selection.")
+            displayGameOverAlert()
         }
         
         turnIsEnding()
@@ -89,7 +89,7 @@ class ViewController: UIViewController {
         do {
             try game.board.someoneHasSelectedPocket(1, OnSideNumber: 0)
         } catch {
-            print("Bad selection.")
+            displayGameOverAlert()
         }
         
         turnIsEnding()
@@ -100,7 +100,7 @@ class ViewController: UIViewController {
         do {
             try game.board.someoneHasSelectedPocket(6, OnSideNumber: 1)
         } catch {
-            print("Bad selection.")
+            displayGameOverAlert()
         }
         
         turnIsEnding()
@@ -111,7 +111,7 @@ class ViewController: UIViewController {
         do {
             try game.board.someoneHasSelectedPocket(5, OnSideNumber: 1)
         } catch {
-            print("Bad selection.")
+            displayGameOverAlert()
         }
         
         turnIsEnding()
@@ -122,7 +122,7 @@ class ViewController: UIViewController {
         do {
             try game.board.someoneHasSelectedPocket(4, OnSideNumber: 1)
         } catch {
-            print("Bad selection.")
+            displayGameOverAlert()
         }
         
         turnIsEnding()
@@ -133,7 +133,7 @@ class ViewController: UIViewController {
         do {
             try game.board.someoneHasSelectedPocket(3, OnSideNumber: 1)
         } catch {
-            print("Bad selection.")
+            displayGameOverAlert()
         }
         
         turnIsEnding()
@@ -144,7 +144,7 @@ class ViewController: UIViewController {
         do {
             try game.board.someoneHasSelectedPocket(2, OnSideNumber: 1)
         } catch {
-            print("Bad selection.")
+            displayGameOverAlert()
         }
         
         turnIsEnding()
@@ -155,7 +155,7 @@ class ViewController: UIViewController {
         do {
             try game.board.someoneHasSelectedPocket(1, OnSideNumber: 1)
         } catch {
-            print("Bad selection.")
+            displayGameOverAlert()
         }
         
         turnIsEnding()
@@ -220,6 +220,12 @@ class ViewController: UIViewController {
             player1pocket2.enabled = enabledState
             player1pocket1.enabled = enabledState
         }
+    }
+    
+    func displayGameOverAlert() {
+        let alert = UIAlertController(title: "Game has been forfeited by player", message: nil, preferredStyle: UIAlertControllerStyle.Alert)
+        
+        self.presentViewController(alert, animated: true, completion: nil)
     }
     
     func turnIsEnding() {

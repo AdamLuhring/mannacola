@@ -12,13 +12,15 @@ class LeftStrategy: Strategy {
     func determinePocketSelectionForPlayer(assignedPlayerId: Int, board: Board) -> Int {
         // Always choose the left-most available pocket
         let mySide = board.sides[assignedPlayerId]
-        var pocketSelection: Int?
+        var pocketSelection: Int?, pocketNumber: Int = 6
         
-        for pocketNumber in 6...1 {
+        while pocketNumber > 0 {
             if mySide.pockets[pocketNumber].count > 0 {
                 pocketSelection = pocketNumber
                 break
             }
+            
+            pocketNumber--
         }
         
         if pocketSelection != nil {
