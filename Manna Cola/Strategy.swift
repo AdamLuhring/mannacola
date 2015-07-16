@@ -9,5 +9,5 @@
 import Foundation
 
 protocol Strategy {
-    func hasReceivedTurn(board: Board) -> Int
+    func determinePocketSelectionForPlayer(assignedPlayerId: Int, board: Board) -> Int
 }

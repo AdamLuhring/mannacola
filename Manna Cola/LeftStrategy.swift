@@ -9,7 +9,9 @@
 import Foundation
 
 class LeftStrategy: Strategy {
-    func hasReceivedTurn(board: Board) -> Int {
+    func determinePocketSelectionForPlayer(assignedPlayerId: Int, board: Board) -> Int {
+        // Always choose the left-most available pocket
+        
         return 6
     }
 }

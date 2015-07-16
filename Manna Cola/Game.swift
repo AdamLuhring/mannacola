@@ -36,7 +36,7 @@ class Game {
                 throw GameError.NoStrategyForAIPlayer
             }
             
-            let selectedPocketNumber = strategyForCurrentTurn.hasReceivedTurn(self.board)
+            let selectedPocketNumber = strategyForCurrentTurn.determinePocketSelectionForPlayer(currentTurn.id, board: self.board)
             let selectedSideNumber = self.currentTurn.id // i.e. the player's own side
             
             
