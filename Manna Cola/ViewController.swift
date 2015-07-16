@@ -37,7 +37,7 @@ class ViewController: UIViewController {
             displayGameOverAlert()
         }
         
-        turnIsEnding()
+        humanTurnIsEnding()
     }
     
     @IBOutlet weak var player0pocket5: UIButton!
@@ -48,7 +48,7 @@ class ViewController: UIViewController {
             displayGameOverAlert()
         }
         
-        turnIsEnding()
+        humanTurnIsEnding()
     }
     
     @IBOutlet weak var player0pocket4: UIButton!
@@ -59,7 +59,7 @@ class ViewController: UIViewController {
             displayGameOverAlert()
         }
         
-        turnIsEnding()
+        humanTurnIsEnding()
     }
     
     @IBOutlet weak var player0pocket3: UIButton!
@@ -70,7 +70,7 @@ class ViewController: UIViewController {
             displayGameOverAlert()
         }
         
-        turnIsEnding()
+        humanTurnIsEnding()
     }
     
     @IBOutlet weak var player0pocket2: UIButton!
@@ -81,7 +81,7 @@ class ViewController: UIViewController {
             displayGameOverAlert()
         }
         
-        turnIsEnding()
+        humanTurnIsEnding()
     }
     
     @IBOutlet weak var player0pocket1: UIButton!
@@ -92,7 +92,7 @@ class ViewController: UIViewController {
             displayGameOverAlert()
         }
         
-        turnIsEnding()
+        humanTurnIsEnding()
     }
     
     @IBOutlet weak var player1pocket6: UIButton!
@@ -103,7 +103,7 @@ class ViewController: UIViewController {
             displayGameOverAlert()
         }
         
-        turnIsEnding()
+        humanTurnIsEnding()
     }
     
     @IBOutlet weak var player1pocket5: UIButton!
@@ -114,7 +114,7 @@ class ViewController: UIViewController {
             displayGameOverAlert()
         }
         
-        turnIsEnding()
+        humanTurnIsEnding()
     }
     
     @IBOutlet weak var player1pocket4: UIButton!
@@ -125,7 +125,7 @@ class ViewController: UIViewController {
             displayGameOverAlert()
         }
         
-        turnIsEnding()
+        humanTurnIsEnding()
     }
     
     @IBOutlet weak var player1pocket3: UIButton!
@@ -136,7 +136,7 @@ class ViewController: UIViewController {
             displayGameOverAlert()
         }
         
-        turnIsEnding()
+        humanTurnIsEnding()
     }
     
     @IBOutlet weak var player1pocket2: UIButton!
@@ -147,7 +147,7 @@ class ViewController: UIViewController {
             displayGameOverAlert()
         }
         
-        turnIsEnding()
+        humanTurnIsEnding()
     }
     
     @IBOutlet weak var player1pocket1: UIButton!
@@ -158,7 +158,7 @@ class ViewController: UIViewController {
             displayGameOverAlert()
         }
         
-        turnIsEnding()
+        humanTurnIsEnding()
     }
     
     func updateCountsOnControls() {
@@ -228,20 +228,30 @@ class ViewController: UIViewController {
         self.presentViewController(alert, animated: true, completion: nil)
     }
     
-    func turnIsEnding() {
-        let numberOfActiveSide: Int
+    func humanTurnIsEnding() {
+        var turnTakenByAI: Bool
+        
         // Perform post-turn checks
         
         // Is game over?
         
         // NEXT TURN BEGINNING!
         
-        // Launch the next turn (if game hasn't ended)
-        if let sideToBeEnabled = try! self.game.newTurn() {
-            numberOfActiveSide = sideToBeEnabled
-        } else {
-            // Game method is returning nil, which means an AI player had a turn
-            return
+        turnTakenByAI = launchNextTurn()
+        
+        // If an AI player took a turn, launch another turn
+        if turnTakenByAI {
+            launchNextTurn()
+        }
+    }
+    
+    func launchNextTurn() -> Bool {     // Returns whether or not turn is being taken by an AI (true if AI)
+        var numberOfActiveSide: Int?
+        
+        do {
+            numberOfActiveSide = try self.game.nextPlayerTakesTurn()
+        } catch {
+            displayGameOverAlert()
         }
         
         // Update counts on controls
@@ -249,10 +259,17 @@ class ViewController: UIViewController {
         
         // Disable side of inactive player
         disableAllSidesExcept(numberOfActiveSide)
+        
+        if numberOfActiveSide == nil {
+            return true
+        } else {
+            return false
+        }
     }
     
-    func disableAllSidesExcept(activeSideNumber: Int) {
+    func disableAllSidesExcept(activeSideNumber: Int?) {
         let numberOfHighestSide = self.game.board.sides.count - 1
+        
         for sideNumber in 0...(numberOfHighestSide) {
             if sideNumber != activeSideNumber {
                 setControlEnabledState(false, ForPlayerId: sideNumber)

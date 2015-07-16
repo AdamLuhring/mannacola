@@ -25,7 +25,7 @@ class Game {
         self.currentTurn = players[numberOfPlayerWithFirstTurn]
     }
     
-    func newTurn() throws -> Int? {    // Returns the side number that should be enabled in the VC, if any
+    func nextPlayerTakesTurn() throws -> Int? {    // Returns the side number that should be enabled in the VC, if any
         // Switch current turn to next player
         self.currentTurn = getNextPlayer(self.currentTurn)
         
