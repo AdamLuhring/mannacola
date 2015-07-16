@@ -23,8 +23,3 @@ class PlayerRegistrar {
         return (player1, player2)
     }
 }
-
-enum PlayerType {
-    case Human
-    case Computer
-}

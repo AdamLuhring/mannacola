@@ -28,7 +28,7 @@
                                                 <fontDescription key="fontDescription" type="system" pointSize="34"/>
                                                 <state key="normal" title="4"/>
                                                 <connections>
-                                                    <action selector="p2SelectedPos6:" destination="BYZ-38-t0r" eventType="touchUpInside" id="9y9-p7-aji"/>
+                                                    <action selector="selectedSide1Pocket1:" destination="BYZ-38-t0r" eventType="touchUpInside" id="hxp-Hj-CGp"/>
                                                 </connections>
                                             </button>
                                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="F2y-o2-AVI" userLabel="position5">
@@ -36,7 +36,7 @@
                                                 <fontDescription key="fontDescription" type="system" pointSize="34"/>
                                                 <state key="normal" title="4"/>
                                                 <connections>
-                                                    <action selector="p2SelectedPos5:" destination="BYZ-38-t0r" eventType="touchUpInside" id="nHS-rz-RU3"/>
+                                                    <action selector="selectedSide1Pocket2:" destination="BYZ-38-t0r" eventType="touchUpInside" id="tAD-Gd-LFd"/>
                                                 </connections>
                                             </button>
                                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="5M5-dA-1YB" userLabel="position4">
@@ -44,7 +44,7 @@
                                                 <fontDescription key="fontDescription" type="system" pointSize="34"/>
                                                 <state key="normal" title="4"/>
                                                 <connections>
-                                                    <action selector="p2SelectedPos4:" destination="BYZ-38-t0r" eventType="touchUpInside" id="n0c-Kp-7Wc"/>
+                                                    <action selector="selectedSide1Pocket3:" destination="BYZ-38-t0r" eventType="touchUpInside" id="cka-bD-2Z2"/>
                                                 </connections>
                                             </button>
                                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="WaD-Y4-fm0" userLabel="position3">
@@ -52,7 +52,7 @@
                                                 <fontDescription key="fontDescription" type="system" pointSize="34"/>
                                                 <state key="normal" title="4"/>
                                                 <connections>
-                                                    <action selector="p2SelectedPos3:" destination="BYZ-38-t0r" eventType="touchUpInside" id="lL9-Dl-4Eq"/>
+                                                    <action selector="selectedSide1Pocket4:" destination="BYZ-38-t0r" eventType="touchUpInside" id="ngk-XA-Mm3"/>
                                                 </connections>
                                             </button>
                                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="5yc-JP-QMi" userLabel="position2">
@@ -60,7 +60,7 @@
                                                 <fontDescription key="fontDescription" type="system" pointSize="34"/>
                                                 <state key="normal" title="4"/>
                                                 <connections>
-                                                    <action selector="p2SelectedPos2:" destination="BYZ-38-t0r" eventType="touchUpInside" id="00n-AO-DHb"/>
+                                                    <action selector="selectedSide1Pocket5:" destination="BYZ-38-t0r" eventType="touchUpInside" id="Guc-V6-ZSG"/>
                                                 </connections>
                                             </button>
                                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="LDe-2T-Q3s" userLabel="position1">
@@ -68,7 +68,7 @@
                                                 <fontDescription key="fontDescription" type="system" pointSize="34"/>
                                                 <state key="normal" title="4"/>
                                                 <connections>
-                                                    <action selector="p2SelectedPos1:" destination="BYZ-38-t0r" eventType="touchUpInside" id="7jc-gC-Umr"/>
+                                                    <action selector="selectedSide1Pocket6:" destination="BYZ-38-t0r" eventType="touchUpInside" id="HFN-LT-DoK"/>
                                                 </connections>
                                             </button>
                                         </subviews>
@@ -94,7 +94,7 @@
                                                 <fontDescription key="fontDescription" type="system" pointSize="34"/>
                                                 <state key="normal" title="4"/>
                                                 <connections>
-                                                    <action selector="p1SelectedPos1:" destination="BYZ-38-t0r" eventType="touchUpInside" id="Xjf-8L-bdF"/>
+                                                    <action selector="selectedSide0Pocket6:" destination="BYZ-38-t0r" eventType="touchUpInside" id="Eyz-6G-rZX"/>
                                                 </connections>
                                             </button>
                                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="E2z-56-S88" userLabel="position2">
@@ -102,7 +102,7 @@
                                                 <fontDescription key="fontDescription" type="system" pointSize="34"/>
                                                 <state key="normal" title="4"/>
                                                 <connections>
-                                                    <action selector="p1SelectedPos2:" destination="BYZ-38-t0r" eventType="touchUpInside" id="GhZ-7Q-E8r"/>
+                                                    <action selector="selectedSide0Pocket5:" destination="BYZ-38-t0r" eventType="touchUpInside" id="Y1k-LC-cFX"/>
                                                 </connections>
                                             </button>
                                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="WAl-SD-XC8" userLabel="position3">
@@ -110,7 +110,7 @@
                                                 <fontDescription key="fontDescription" type="system" pointSize="34"/>
                                                 <state key="normal" title="4"/>
                                                 <connections>
-                                                    <action selector="p1SelectedPos3:" destination="BYZ-38-t0r" eventType="touchUpInside" id="wPO-7f-iF4"/>
+                                                    <action selector="selectedSide0Pocket4:" destination="BYZ-38-t0r" eventType="touchUpInside" id="U9K-t8-RV7"/>
                                                 </connections>
                                             </button>
                                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="M5e-hd-0QI" userLabel="position4">
@@ -118,7 +118,7 @@
                                                 <fontDescription key="fontDescription" type="system" pointSize="34"/>
                                                 <state key="normal" title="4"/>
                                                 <connections>
-                                                    <action selector="p1SelectedPos4:" destination="BYZ-38-t0r" eventType="touchUpInside" id="R5v-q7-Mcn"/>
+                                                    <action selector="selectedSide0Pocket3:" destination="BYZ-38-t0r" eventType="touchUpInside" id="Ivn-Wf-H04"/>
                                                 </connections>
                                             </button>
                                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Jar-6z-OBV" userLabel="position5">
@@ -126,7 +126,7 @@
                                                 <fontDescription key="fontDescription" type="system" pointSize="34"/>
                                                 <state key="normal" title="4"/>
                                                 <connections>
-                                                    <action selector="p1SelectedPos5:" destination="BYZ-38-t0r" eventType="touchUpInside" id="bOj-UI-d41"/>
+                                                    <action selector="selectedSide0Pocket2:" destination="BYZ-38-t0r" eventType="touchUpInside" id="j1d-tx-blC"/>
                                                 </connections>
                                             </button>
                                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="kFW-a3-rue" userLabel="position6">
@@ -134,7 +134,7 @@
                                                 <fontDescription key="fontDescription" type="system" pointSize="34"/>
                                                 <state key="normal" title="4"/>
                                                 <connections>
-                                                    <action selector="p1SelectedPos6:" destination="BYZ-38-t0r" eventType="touchUpInside" id="ZG0-oS-Fie"/>
+                                                    <action selector="selectedSide0Pocket1:" destination="BYZ-38-t0r" eventType="touchUpInside" id="8Vg-w1-RRg"/>
                                                 </connections>
                                             </button>
                                         </subviews>
@@ -157,20 +157,20 @@
                         </constraints>
                     </view>
                     <connections>
-                        <outlet property="goalForPlayer1" destination="QNV-zm-OJL" id="pos-Es-fWb"/>
-                        <outlet property="goalForPlayer2" destination="HoR-uO-A95" id="ttr-z0-H2b"/>
-                        <outlet property="p1pos1" destination="GLA-Vy-yIW" id="Qbe-F3-ziP"/>
-                        <outlet property="p1pos2" destination="E2z-56-S88" id="A03-Vc-qvB"/>
-                        <outlet property="p1pos3" destination="WAl-SD-XC8" id="Bxn-B2-Bos"/>
-                        <outlet property="p1pos4" destination="M5e-hd-0QI" id="NQq-Ah-gbU"/>
-                        <outlet property="p1pos5" destination="Jar-6z-OBV" id="i00-sn-q5o"/>
-                        <outlet property="p1pos6" destination="kFW-a3-rue" id="x9I-e3-ggL"/>
-                        <outlet property="p2pos1" destination="LDe-2T-Q3s" id="zwQ-jN-Np7"/>
-                        <outlet property="p2pos2" destination="5yc-JP-QMi" id="PJc-qj-PCt"/>
-                        <outlet property="p2pos3" destination="WaD-Y4-fm0" id="bqr-U6-BSn"/>
-                        <outlet property="p2pos4" destination="5M5-dA-1YB" id="LXF-GT-3UN"/>
-                        <outlet property="p2pos5" destination="F2y-o2-AVI" id="8Cl-KY-3Ij"/>
-                        <outlet property="p2pos6" destination="BB7-Ks-Uy5" id="x4d-aI-fwQ"/>
+                        <outlet property="goalForPlayer0" destination="QNV-zm-OJL" id="1mr-0z-JTj"/>
+                        <outlet property="goalForPlayer1" destination="HoR-uO-A95" id="pkt-CF-NFH"/>
+                        <outlet property="player0pocket1" destination="kFW-a3-rue" id="iJw-98-hPs"/>
+                        <outlet property="player0pocket2" destination="Jar-6z-OBV" id="hoi-wh-MbC"/>
+                        <outlet property="player0pocket3" destination="M5e-hd-0QI" id="gay-2X-b2e"/>
+                        <outlet property="player0pocket4" destination="WAl-SD-XC8" id="Emn-HY-bRl"/>
+                        <outlet property="player0pocket5" destination="E2z-56-S88" id="H8r-fe-b7r"/>
+                        <outlet property="player0pocket6" destination="GLA-Vy-yIW" id="pjF-0v-qqQ"/>
+                        <outlet property="player1pocket1" destination="BB7-Ks-Uy5" id="P25-qX-ixy"/>
+                        <outlet property="player1pocket2" destination="F2y-o2-AVI" id="Lbr-DW-Q15"/>
+                        <outlet property="player1pocket3" destination="5M5-dA-1YB" id="Thf-bn-e4k"/>
+                        <outlet property="player1pocket4" destination="WaD-Y4-fm0" id="06h-WV-Uf9"/>
+                        <outlet property="player1pocket5" destination="5yc-JP-QMi" id="2Ga-Y7-bNX"/>
+                        <outlet property="player1pocket6" destination="LDe-2T-Q3s" id="czo-vQ-rjm"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>

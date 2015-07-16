@@ -8,21 +8,16 @@
 
 import Foundation
 
-
-class Pocket : AbleToReceiveStones {
-    var count: Int = 4
+class Pocket {
+    var count: Int
     let position: Int
-    let receptacleType = ReceptacleType.Pocket
     
     init (position: Int) {
         self.position = position
-    }
-    
-    func empty() -> MovingPile {
-        let pile = MovingPile(count: self.count)
-        
-        self.count = 0
-        
-        return pile
+        if (position > 0) {
+            self.count = 4
+        } else {
+            self.count = 0
+        }
     }
 }

@@ -8,7 +8,7 @@
 
 import Foundation
 
-class RobotPlayer: AnyPlayer {
+class RobotPlayer: AnyPlayer, ArtificialPlayer {
     var opponent: AnyPlayer? = nil
     let game: Game
     let playerNumber: Int

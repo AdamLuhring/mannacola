@@ -8,20 +8,16 @@
 
 import Foundation
 
-
 class Side {
     var pockets: [Pocket]
-    var goal = Goal()
-    let id: Int
     
-    init (id: Int, numberOfPockets: Int) {
+    init (numberOfPockets: Int) {
         var pocketSet = [Pocket]()
         
-        for pocketNumber in 1...numberOfPockets {
+        for pocketNumber in 0...numberOfPockets {
             pocketSet.append(Pocket(position: pocketNumber))
         }
         
         self.pockets = pocketSet
-        self.id = id
     }
 }

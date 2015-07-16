@@ -8,7 +8,6 @@
 
 import Foundation
 
-
 class MovingPile {
     var count: Int
     
@@ -16,13 +15,13 @@ class MovingPile {
         self.count = count
     }
     
-    func depositTo(inout receptacle: AbleToReceiveStones) throws -> Int {
+    func depositTo(inout pocket: Pocket) throws -> Int {
         if self.count < 1 {
             // The pile is empty, can't do anything
             throw MovingPileError.NothingToDeposit
         } else {
             // Transfer a stone from the moving pile to the receptacle
-            receptacle.count = receptacle.count + 1
+            pocket.count = pocket.count + 1
             self.count = self.count - 1
         }
         
