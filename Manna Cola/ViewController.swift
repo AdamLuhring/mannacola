@@ -183,6 +183,13 @@ class ViewController: UIViewController {
         
         button.setTitle(text, forState: UIControlState.Normal)
         button.setTitle(text, forState: UIControlState.Disabled)
+        
+        // If there are no stones, this button needs to be disabled.
+        if number < 1 {
+            button.enabled = false
+        } else {
+            button.enabled = true
+        }
     }
     
     func setLabelTextToNumber(label: UILabel, number: Int) {
@@ -191,23 +198,23 @@ class ViewController: UIViewController {
         label.text = text
     }
     
-    func setControlEnabled(enabled: Bool, ForPlayerId: Int) {
+    func setControlEnabledState(enabledState: Bool, ForPlayerId: Int) {
         if ForPlayerId == 0 {
-            player0pocket6.enabled = enabled
-            player0pocket5.enabled = enabled
-            player0pocket4.enabled = enabled
-            player0pocket3.enabled = enabled
-            player0pocket2.enabled = enabled
-            player0pocket1.enabled = enabled
+            player0pocket6.enabled = enabledState
+            player0pocket5.enabled = enabledState
+            player0pocket4.enabled = enabledState
+            player0pocket3.enabled = enabledState
+            player0pocket2.enabled = enabledState
+            player0pocket1.enabled = enabledState
         }
         
         if ForPlayerId == 1 {
-            player1pocket6.enabled = enabled
-            player1pocket5.enabled = enabled
-            player1pocket4.enabled = enabled
-            player1pocket3.enabled = enabled
-            player1pocket2.enabled = enabled
-            player1pocket1.enabled = enabled
+            player1pocket6.enabled = enabledState
+            player1pocket5.enabled = enabledState
+            player1pocket4.enabled = enabledState
+            player1pocket3.enabled = enabledState
+            player1pocket2.enabled = enabledState
+            player1pocket1.enabled = enabledState
         }
     }
 }

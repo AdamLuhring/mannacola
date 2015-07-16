@@ -29,7 +29,5 @@ class Turn {
         self.playerId = playerId
     }
     
-    func selectPocket(number: Int) {
-        
-    }
+    
 }

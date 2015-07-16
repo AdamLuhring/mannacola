@@ -22,7 +22,6 @@
 		37D816231B4DA7ED00BA1AB1 /* Manna_ColaUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37D816221B4DA7ED00BA1AB1 /* Manna_ColaUITests.swift */; };
 		37D816321B4DC34700BA1AB1 /* Pocket.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37D816311B4DC34700BA1AB1 /* Pocket.swift */; };
 		37D816361B4DDAD200BA1AB1 /* Game.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37D816351B4DDAD200BA1AB1 /* Game.swift */; };
-		37D816381B4DDC7C00BA1AB1 /* AnyPlayer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37D816371B4DDC7C00BA1AB1 /* AnyPlayer.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -64,7 +63,6 @@
 		37D816241B4DA7ED00BA1AB1 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		37D816311B4DC34700BA1AB1 /* Pocket.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Pocket.swift; sourceTree = "<group>"; };
 		37D816351B4DDAD200BA1AB1 /* Game.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Game.swift; sourceTree = "<group>"; };
-		37D816371B4DDC7C00BA1AB1 /* AnyPlayer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AnyPlayer.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -96,7 +94,6 @@
 			isa = PBXGroup;
 			children = (
 				37D7D8A51B57437E0056C9B9 /* Player.swift */,
-				37D816371B4DDC7C00BA1AB1 /* AnyPlayer.swift */,
 			);
 			name = Players;
 			sourceTree = "<group>";
@@ -314,7 +311,6 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				37D816381B4DDC7C00BA1AB1 /* AnyPlayer.swift in Sources */,
 				37D816361B4DDAD200BA1AB1 /* Game.swift in Sources */,
 				37D7D8A21B573B6B0056C9B9 /* Board.swift in Sources */,
 				37D7D8A61B57437E0056C9B9 /* Player.swift in Sources */,

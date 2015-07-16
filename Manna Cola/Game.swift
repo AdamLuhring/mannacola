@@ -11,7 +11,6 @@ import Foundation
 class Game {
     var board: Board
     var players = [Player]()
-    var turns = [Turn]()
     
     init () {
         self.board = Board(numberOfSides: 2)
@@ -19,5 +18,9 @@ class Game {
         // Add two players
         self.players.append(Player(type: PlayerType.Human, id: 0))
         self.players.append(Player(type: PlayerType.Human, id: 1))
+    }
+    
+    func performPostTurnChecks() throws {
+        
     }
 }
