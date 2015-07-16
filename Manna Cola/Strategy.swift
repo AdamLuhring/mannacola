@@ -1,5 +1,5 @@
 //
-//  LeftStrategy.swift
+//  Strategy.swift
 //  Manna Cola
 //
 //  Created by Dan Luhring on 7/15/15.
@@ -8,8 +8,6 @@
 
 import Foundation
 
-class LeftStrategy: Strategy {
-    func hasReceivedTurn(board: Board) -> Int {
-        return 6
-    }
+protocol Strategy {
+    func hasReceivedTurn(board: Board) -> Int
 }

@@ -11,10 +11,12 @@ import Foundation
 class Player {
     let type: PlayerType
     let id: Int
+    let strategy: Strategy?
     
-    init (type: PlayerType, id: Int) {
+    init (type: PlayerType, id: Int, strategy: Strategy? = nil) {
         self.type = type
         self.id = id
+        self.strategy = strategy
     }
 }
 

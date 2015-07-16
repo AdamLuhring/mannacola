@@ -11,7 +11,7 @@
 		37D7D8A21B573B6B0056C9B9 /* Board.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37D7D8A11B573B6B0056C9B9 /* Board.swift */; };
 		37D7D8A41B57411F0056C9B9 /* Turn.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37D7D8A31B57411F0056C9B9 /* Turn.swift */; };
 		37D7D8A61B57437E0056C9B9 /* Player.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37D7D8A51B57437E0056C9B9 /* Player.swift */; };
-		37D7D8A81B5746C30056C9B9 /* ComputerStrategy.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37D7D8A71B5746C30056C9B9 /* ComputerStrategy.swift */; };
+		37D7D8A81B5746C30056C9B9 /* Strategy.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37D7D8A71B5746C30056C9B9 /* Strategy.swift */; };
 		37D7D8AB1B57472F0056C9B9 /* LeftStrategy.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37D7D8AA1B57472F0056C9B9 /* LeftStrategy.swift */; };
 		37D816031B4DA7EC00BA1AB1 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37D816021B4DA7EC00BA1AB1 /* AppDelegate.swift */; };
 		37D816051B4DA7EC00BA1AB1 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37D816041B4DA7EC00BA1AB1 /* ViewController.swift */; };
@@ -46,7 +46,7 @@
 		37D7D8A11B573B6B0056C9B9 /* Board.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Board.swift; sourceTree = "<group>"; };
 		37D7D8A31B57411F0056C9B9 /* Turn.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Turn.swift; sourceTree = "<group>"; };
 		37D7D8A51B57437E0056C9B9 /* Player.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Player.swift; sourceTree = "<group>"; };
-		37D7D8A71B5746C30056C9B9 /* ComputerStrategy.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ComputerStrategy.swift; sourceTree = "<group>"; };
+		37D7D8A71B5746C30056C9B9 /* Strategy.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Strategy.swift; sourceTree = "<group>"; };
 		37D7D8AA1B57472F0056C9B9 /* LeftStrategy.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LeftStrategy.swift; sourceTree = "<group>"; };
 		37D815FF1B4DA7EC00BA1AB1 /* Manna Cola.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Manna Cola.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		37D816021B4DA7EC00BA1AB1 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -110,7 +110,7 @@
 		37D7D8A91B57471A0056C9B9 /* Strategies */ = {
 			isa = PBXGroup;
 			children = (
-				37D7D8A71B5746C30056C9B9 /* ComputerStrategy.swift */,
+				37D7D8A71B5746C30056C9B9 /* Strategy.swift */,
 				37D7D8AA1B57472F0056C9B9 /* LeftStrategy.swift */,
 			);
 			name = Strategies;
@@ -318,7 +318,7 @@
 				37D7D8A41B57411F0056C9B9 /* Turn.swift in Sources */,
 				37D7D8AB1B57472F0056C9B9 /* LeftStrategy.swift in Sources */,
 				37D816051B4DA7EC00BA1AB1 /* ViewController.swift in Sources */,
-				37D7D8A81B5746C30056C9B9 /* ComputerStrategy.swift in Sources */,
+				37D7D8A81B5746C30056C9B9 /* Strategy.swift in Sources */,
 				37D816031B4DA7EC00BA1AB1 /* AppDelegate.swift in Sources */,
 				37D816321B4DC34700BA1AB1 /* Pocket.swift in Sources */,
 			);

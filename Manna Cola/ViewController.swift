@@ -15,6 +15,10 @@ class ViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
+        
+        // Disable all sides who aren't the active player (current turn)
+        let numberOfPlayerWithCurrentTurn = self.game.currentTurn.id
+        disableAllSidesExcept(numberOfPlayerWithCurrentTurn)
     }
 
     override func didReceiveMemoryWarning() {
@@ -33,7 +37,7 @@ class ViewController: UIViewController {
             print("Bad selection.")
         }
         
-        updateCountsOnControls()
+        turnIsEnding()
     }
     
     @IBOutlet weak var player0pocket5: UIButton!
@@ -44,7 +48,7 @@ class ViewController: UIViewController {
             print("Bad selection.")
         }
         
-        updateCountsOnControls()
+        turnIsEnding()
     }
     
     @IBOutlet weak var player0pocket4: UIButton!
@@ -55,7 +59,7 @@ class ViewController: UIViewController {
             print("Bad selection.")
         }
         
-        updateCountsOnControls()
+        turnIsEnding()
     }
     
     @IBOutlet weak var player0pocket3: UIButton!
@@ -66,7 +70,7 @@ class ViewController: UIViewController {
             print("Bad selection.")
         }
         
-        updateCountsOnControls()
+        turnIsEnding()
     }
     
     @IBOutlet weak var player0pocket2: UIButton!
@@ -77,7 +81,7 @@ class ViewController: UIViewController {
             print("Bad selection.")
         }
         
-        updateCountsOnControls()
+        turnIsEnding()
     }
     
     @IBOutlet weak var player0pocket1: UIButton!
@@ -88,7 +92,7 @@ class ViewController: UIViewController {
             print("Bad selection.")
         }
         
-        updateCountsOnControls()
+        turnIsEnding()
     }
     
     @IBOutlet weak var player1pocket6: UIButton!
@@ -99,7 +103,7 @@ class ViewController: UIViewController {
             print("Bad selection.")
         }
         
-        updateCountsOnControls()
+        turnIsEnding()
     }
     
     @IBOutlet weak var player1pocket5: UIButton!
@@ -110,7 +114,7 @@ class ViewController: UIViewController {
             print("Bad selection.")
         }
         
-        updateCountsOnControls()
+        turnIsEnding()
     }
     
     @IBOutlet weak var player1pocket4: UIButton!
@@ -121,7 +125,7 @@ class ViewController: UIViewController {
             print("Bad selection.")
         }
         
-        updateCountsOnControls()
+        turnIsEnding()
     }
     
     @IBOutlet weak var player1pocket3: UIButton!
@@ -132,7 +136,7 @@ class ViewController: UIViewController {
             print("Bad selection.")
         }
         
-        updateCountsOnControls()
+        turnIsEnding()
     }
     
     @IBOutlet weak var player1pocket2: UIButton!
@@ -143,7 +147,7 @@ class ViewController: UIViewController {
             print("Bad selection.")
         }
         
-        updateCountsOnControls()
+        turnIsEnding()
     }
     
     @IBOutlet weak var player1pocket1: UIButton!
@@ -154,7 +158,7 @@ class ViewController: UIViewController {
             print("Bad selection.")
         }
         
-        updateCountsOnControls()
+        turnIsEnding()
     }
     
     func updateCountsOnControls() {
@@ -215,6 +219,38 @@ class ViewController: UIViewController {
             player1pocket3.enabled = enabledState
             player1pocket2.enabled = enabledState
             player1pocket1.enabled = enabledState
+        }
+    }
+    
+    func turnIsEnding() {
+        let numberOfActiveSide: Int
+        // Perform post-turn checks
+        
+        // Is game over?
+        
+        // NEXT TURN BEGINNING!
+        
+        // Launch the next turn (if game hasn't ended)
+        if let sideToBeEnabled = try! self.game.newTurn() {
+            numberOfActiveSide = sideToBeEnabled
+        } else {
+            // Game method is returning nil, which means an AI player had a turn
+            return
+        }
+        
+        // Update counts on controls
+        updateCountsOnControls()
+        
+        // Disable side of inactive player
+        disableAllSidesExcept(numberOfActiveSide)
+    }
+    
+    func disableAllSidesExcept(activeSideNumber: Int) {
+        let numberOfHighestSide = self.game.board.sides.count - 1
+        for sideNumber in 0...(numberOfHighestSide) {
+            if sideNumber != activeSideNumber {
+                setControlEnabledState(false, ForPlayerId: sideNumber)
+            }
         }
     }
 }
