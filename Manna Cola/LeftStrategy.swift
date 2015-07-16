@@ -11,7 +11,20 @@ import Foundation
 class LeftStrategy: Strategy {
     func determinePocketSelectionForPlayer(assignedPlayerId: Int, board: Board) -> Int {
         // Always choose the left-most available pocket
+        let mySide = board.sides[assignedPlayerId]
+        var pocketSelection: Int?
         
-        return 6
+        for pocketNumber in 6...1 {
+            if mySide.pockets[pocketNumber].count > 0 {
+                pocketSelection = pocketNumber
+                break
+            }
+        }
+        
+        if pocketSelection != nil {
+            return pocketSelection!
+        } else {
+            return 0
+        }
     }
 }
