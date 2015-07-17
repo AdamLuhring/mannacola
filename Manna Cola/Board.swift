@@ -52,12 +52,12 @@ class Board {
             
             // Perform check: last stone into own goal
             let goalOfPlayer = getGoalForPlayerNumber(player.id)
-            if currentPocket === goalOfPlayer {
+            if (numberOfStonesRemainingInTransit == 1) && (currentPocket === goalOfPlayer) {
                 depositCircumstance = DepositCircumstance.FinalStoneIntoOwnGoal
             }
             
             // Perform check: last stone into empty across from stones for capture
-            if (currentPocket.count == 0) && (currentPocket !== goalOfPlayer) {
+            if (numberOfStonesRemainingInTransit == 1) && (currentPocket.count == 0) && (currentPocket !== goalOfPlayer) {
                 depositCircumstance = DepositCircumstance.FinalStoneIntoOwnEmptyPocketForCapture
             }
             
