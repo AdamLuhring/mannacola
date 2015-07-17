@@ -16,9 +16,7 @@ class ViewController: UIViewController {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
         
-        // Disable all sides who aren't the active player (current turn)
-        let numberOfPlayerWithCurrentTurn = self.game.playerWithCurrentTurn.id
-        disableAllSidesExcept(numberOfPlayerWithCurrentTurn)
+        tryResumingGameTurnLoop()
     }
 
     override func didReceiveMemoryWarning() {
@@ -31,134 +29,134 @@ class ViewController: UIViewController {
 
     @IBOutlet weak var player0pocket6: UIButton!
     @IBAction func selectedSide0Pocket6(sender: AnyObject) {
-        do {
-            try game.board.playerHasSelectedPocket(game.players[0], pocketNumber: 6, OnSideNumber: 0)
-        } catch {
-            displayGameOverAlert()
+        if let message = game.humanHasMadeSelection(PocketAddress(side: 0, pocket: 6)) {
+            displayMessageFromGame(message)
+        } else {
+            
         }
         
-        humanTurnIsEnding()
+        tryResumingGameTurnLoop()
     }
     
     @IBOutlet weak var player0pocket5: UIButton!
     @IBAction func selectedSide0Pocket5(sender: AnyObject) {
-        do {
-            try game.board.playerHasSelectedPocket(game.players[0], pocketNumber: 5, OnSideNumber: 0)
-        } catch {
-            displayGameOverAlert()
+        if let message = game.humanHasMadeSelection(PocketAddress(side: 0, pocket: 5)) {
+            displayMessageFromGame(message)
+        } else {
+            
         }
         
-        humanTurnIsEnding()
+        tryResumingGameTurnLoop()
     }
     
     @IBOutlet weak var player0pocket4: UIButton!
     @IBAction func selectedSide0Pocket4(sender: AnyObject) {
-        do {
-            try game.board.playerHasSelectedPocket(game.players[0], pocketNumber: 4, OnSideNumber: 0)
-        } catch {
-            displayGameOverAlert()
+        if let message = game.humanHasMadeSelection(PocketAddress(side: 0, pocket: 4)) {
+            displayMessageFromGame(message)
+        } else {
+            
         }
         
-        humanTurnIsEnding()
+        tryResumingGameTurnLoop()
     }
     
     @IBOutlet weak var player0pocket3: UIButton!
     @IBAction func selectedSide0Pocket3(sender: AnyObject) {
-        do {
-            try game.board.playerHasSelectedPocket(game.players[0], pocketNumber: 3, OnSideNumber: 0)
-        } catch {
-            displayGameOverAlert()
+        if let message = game.humanHasMadeSelection(PocketAddress(side: 0, pocket: 3)) {
+            displayMessageFromGame(message)
+        } else {
+            
         }
         
-        humanTurnIsEnding()
+        tryResumingGameTurnLoop()
     }
     
     @IBOutlet weak var player0pocket2: UIButton!
     @IBAction func selectedSide0Pocket2(sender: AnyObject) {
-        do {
-            try game.board.playerHasSelectedPocket(game.players[0], pocketNumber: 2, OnSideNumber: 0)
-        } catch {
-            displayGameOverAlert()
+        if let message = game.humanHasMadeSelection(PocketAddress(side: 0, pocket: 2)) {
+            displayMessageFromGame(message)
+        } else {
+            
         }
         
-        humanTurnIsEnding()
+        tryResumingGameTurnLoop()
     }
     
     @IBOutlet weak var player0pocket1: UIButton!
     @IBAction func selectedSide0Pocket1(sender: AnyObject) {
-        do {
-            try game.board.playerHasSelectedPocket(game.players[0], pocketNumber: 1, OnSideNumber: 0)
-        } catch {
-            displayGameOverAlert()
+        if let message = game.humanHasMadeSelection(PocketAddress(side: 0, pocket: 1)) {
+            displayMessageFromGame(message)
+        } else {
+            
         }
         
-        humanTurnIsEnding()
+        tryResumingGameTurnLoop()
     }
     
     @IBOutlet weak var player1pocket6: UIButton!
     @IBAction func selectedSide1Pocket6(sender: AnyObject) {
-        do {
-            try game.board.playerHasSelectedPocket(game.players[1], pocketNumber: 6, OnSideNumber: 1)
-        } catch {
-            displayGameOverAlert()
+        if let message = game.humanHasMadeSelection(PocketAddress(side: 1, pocket: 6)) {
+            displayMessageFromGame(message)
+        } else {
+            
         }
         
-        humanTurnIsEnding()
+        tryResumingGameTurnLoop()
     }
     
     @IBOutlet weak var player1pocket5: UIButton!
     @IBAction func selectedSide1Pocket5(sender: AnyObject) {
-        do {
-            try game.board.playerHasSelectedPocket(game.players[1], pocketNumber: 5, OnSideNumber: 1)
-        } catch {
-            displayGameOverAlert()
+        if let message = game.humanHasMadeSelection(PocketAddress(side: 1, pocket: 5)) {
+            displayMessageFromGame(message)
+        } else {
+            
         }
         
-        humanTurnIsEnding()
+        tryResumingGameTurnLoop()
     }
     
     @IBOutlet weak var player1pocket4: UIButton!
     @IBAction func selectedSide1Pocket4(sender: AnyObject) {
-        do {
-            try game.board.playerHasSelectedPocket(game.players[1], pocketNumber: 4, OnSideNumber: 1)
-        } catch {
-            displayGameOverAlert()
+        if let message = game.humanHasMadeSelection(PocketAddress(side: 1, pocket: 4)) {
+            displayMessageFromGame(message)
+        } else {
+            
         }
         
-        humanTurnIsEnding()
+        tryResumingGameTurnLoop()
     }
     
     @IBOutlet weak var player1pocket3: UIButton!
     @IBAction func selectedSide1Pocket3(sender: AnyObject) {
-        do {
-            try game.board.playerHasSelectedPocket(game.players[1], pocketNumber: 3, OnSideNumber: 1)
-        } catch {
-            displayGameOverAlert()
+        if let message = game.humanHasMadeSelection(PocketAddress(side: 1, pocket: 3)) {
+            displayMessageFromGame(message)
+        } else {
+            
         }
         
-        humanTurnIsEnding()
+        tryResumingGameTurnLoop()
     }
     
     @IBOutlet weak var player1pocket2: UIButton!
     @IBAction func selectedSide1Pocket2(sender: AnyObject) {
-        do {
-            try game.board.playerHasSelectedPocket(game.players[1], pocketNumber: 2, OnSideNumber: 1)
-        } catch {
-            displayGameOverAlert()
+        if let message = game.humanHasMadeSelection(PocketAddress(side: 1, pocket: 2)) {
+            displayMessageFromGame(message)
+        } else {
+            
         }
         
-        humanTurnIsEnding()
+        tryResumingGameTurnLoop()
     }
     
     @IBOutlet weak var player1pocket1: UIButton!
     @IBAction func selectedSide1Pocket1(sender: AnyObject) {
-        do {
-            try game.board.playerHasSelectedPocket(game.players[1], pocketNumber: 1, OnSideNumber: 1)
-        } catch {
-            displayGameOverAlert()
+        if let message = game.humanHasMadeSelection(PocketAddress(side: 1, pocket: 1)) {
+            displayMessageFromGame(message)
+        } else {
+            
         }
         
-        humanTurnIsEnding()
+        tryResumingGameTurnLoop()
     }
     
     func updateCountsOnControls() {
@@ -228,42 +226,22 @@ class ViewController: UIViewController {
         self.presentViewController(alert, animated: true, completion: nil)
     }
     
-    func humanTurnIsEnding() {
-        var turnTakenByAI: Bool
+    func displayMessageFromGame(message: String) {
+        let alert = UIAlertController(title: message, message: nil, preferredStyle: UIAlertControllerStyle.Alert)
         
-        // Perform post-turn checks
+        alert.addAction(UIAlertAction(title: "Okay!", style: UIAlertActionStyle.Cancel, handler: nil))
         
-        // Is game over?
-        
-        // NEXT TURN BEGINNING!
-        
-        turnTakenByAI = launchNextTurn()
-        
-        // If an AI player took a turn, launch another turn
-        if turnTakenByAI {
-            launchNextTurn()
-        }
+        self.presentViewController(alert, animated: true, completion: nil)
     }
     
-    func launchNextTurn() -> Bool {     // Returns whether or not turn is being taken by an AI (true if AI)
-        var numberOfActiveSide: Int?
-        
+    func tryResumingGameTurnLoop() {
         do {
-            numberOfActiveSide = try self.game.nextPlayerTakesTurn()
+            let reason = try game.proceedWithTurnLoop()
+            if reason == ReasonForExitingTurnLoop.WaitingOnHuman {
+                self.waitForHumanSelectionOnSide(game.playerWithCurrentTurn.id)
+            }
         } catch {
-            displayGameOverAlert()
-        }
-        
-        // Update counts on controls
-        updateCountsOnControls()
-        
-        // Disable side of inactive player
-        disableAllSidesExcept(numberOfActiveSide)
-        
-        if numberOfActiveSide == nil {
-            return true
-        } else {
-            return false
+            self.displayMessageFromGame("Caught an error from turnLoop.")
         }
     }
     
@@ -275,5 +253,10 @@ class ViewController: UIViewController {
                 setControlEnabledState(false, ForPlayerId: sideNumber)
             }
         }
+    }
+    
+    func waitForHumanSelectionOnSide(sideNumber: Int) {
+        updateCountsOnControls()
+        disableAllSidesExcept(sideNumber)
     }
 }

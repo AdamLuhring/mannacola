@@ -12,6 +12,7 @@ class Game {
     var board: Board
     var players = [Player]()
     var playerWithCurrentTurn: Player
+    var turnLoopHasBeenInitiated = false
     
     init () {
         self.board = Board(numberOfSides: 2)
@@ -27,38 +28,62 @@ class Game {
         self.playerWithCurrentTurn = players[numberOfPlayerWithFirstTurn]
     }
     
-    func nextPlayerTakesTurn() throws -> Int? {    // Returns the side number that should be enabled in the VC, if any
+    func proceedWithTurnLoop() throws -> ReasonForExitingTurnLoop? {
+        var reasonForExitingTurnLoop: ReasonForExitingTurnLoop?
+        
+        repeat {
+            if !turnLoopHasBeenInitiated {
+                // Next player!
+                self.advanceTurnToNextPlayer()
+            } else {
+                turnLoopHasBeenInitiated = true
+            }
+        
+            // Process current turn
+            
+            switch self.playerWithCurrentTurn.type {
+            case .Human:
+                reasonForExitingTurnLoop = ReasonForExitingTurnLoop.WaitingOnHuman
+            case .AI:
+                // Use this player's strategy to select a pocket
+                guard let strategyForCurrentTurn = self.playerWithCurrentTurn.strategy else {
+                    throw GameError.NoStrategyForAIPlayer
+                }
+                
+                let selectedPocketNumber = strategyForCurrentTurn.determinePocketSelectionForPlayer(playerWithCurrentTurn.id, board: self.board)
+                let selectedSideNumber = self.playerWithCurrentTurn.id
+                
+                // Try to select this pocket.
+                do {
+                    try self.board.playerHasSelectedPocket(playerWithCurrentTurn, pocketNumber: selectedPocketNumber, OnSideNumber: selectedSideNumber)
+                } catch BoardError.EmptyPocket {
+                    throw GameError.GameForfeitedViaEmptyPocketSelection(byPlayer: self.playerWithCurrentTurn)
+                } catch {
+                    throw GameError.StrategySelectedNonexistentPocket
+                }
+            }
+        } while reasonForExitingTurnLoop == nil
+        
+        return reasonForExitingTurnLoop
+    }
+    
+    func humanHasMadeSelection(pocketAddress: PocketAddress) -> String? {
+        var message: String?
+        
+        do {
+            try board.playerHasSelectedPocket(self.playerWithCurrentTurn, pocketNumber: pocketAddress.pocket, OnSideNumber: pocketAddress.side)
+        } catch {
+            message = "There was an issue during pocket selection by human."
+        }
+        
+        // evaluatePostMoveRules()
+        
+        return message
+    }
+    
+    func advanceTurnToNextPlayer() {
         // Switch current turn to next player
         self.playerWithCurrentTurn = getNextPlayer(self.playerWithCurrentTurn)
-        
-        switch self.playerWithCurrentTurn.type {
-        case .AI:
-            // Use this player's strategy to select a pocket
-            guard let strategyForCurrentTurn = self.playerWithCurrentTurn.strategy else {
-                throw GameError.NoStrategyForAIPlayer
-            }
-            
-            let selectedPocketNumber = strategyForCurrentTurn.determinePocketSelectionForPlayer(playerWithCurrentTurn.id, board: self.board)
-            let selectedSideNumber = self.playerWithCurrentTurn.id // i.e. the player's own side
-            
-            
-            // Try to select this pocket. If the pocket is empty, the player loses automatically
-            do {
-                try self.board.playerHasSelectedPocket(playerWithCurrentTurn, pocketNumber: selectedPocketNumber, OnSideNumber: selectedSideNumber)
-            } catch BoardError.EmptyPocket {
-                throw GameError.GameForfeitedViaEmptyPocketSelection
-            } catch {
-                throw GameError.StrategySelectedNonexistentPocket
-            }
-            
-            return nil
-            
-        case .Human:
-            // Return the int of the player's side that should be enabled (We'll wait for the human)
-            let sideNumberOfPlayerWithCurrentTurn = self.playerWithCurrentTurn.id
-            
-            return sideNumberOfPlayerWithCurrentTurn
-        }
     }
     
     func getNextPlayer(previousPlayer: Player) -> Player {
@@ -81,8 +106,13 @@ class Game {
     }
 }
 
+enum ReasonForExitingTurnLoop {
+    case GameOver
+    case WaitingOnHuman
+}
+
 enum GameError: ErrorType {
     case NoStrategyForAIPlayer
-    case GameForfeitedViaEmptyPocketSelection
+    case GameForfeitedViaEmptyPocketSelection(byPlayer: Player)
     case StrategySelectedNonexistentPocket
 }

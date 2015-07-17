@@ -19,7 +19,7 @@ class Board {
         }
     }
     
-    func playerHasSelectedPocket(player: Player, pocketNumber: Int, OnSideNumber: Int) throws {
+    func playerHasSelectedPocket(player: Player, pocketNumber: Int, OnSideNumber: Int) throws -> Bool {
         // Adjust board pocket counts to reflect how Mancala works.
         let selectedPocket = self.sides[OnSideNumber].pockets[pocketNumber]
         var currentSideNumber: Int, currentPocketNumber: Int, currentPocket: Pocket
@@ -70,10 +70,11 @@ class Board {
             // Handle special depositing situations
             switch depositCircumstance {
             case .AnyStoneIntoOpponentGoal:
-                continue
+                continue // Move to the next pocket without making a deposit
             case .FinalStoneIntoOwnGoal:
                 transferFromTransitToCurrentPocket()
                 // new turn
+                return true
             case .FinalStoneIntoOwnEmptyPocketForCapture:
                 let pocketAcrossSideNumber: Int, pocketAcrossPocketNumber: Int, pocketAcross: Pocket, countOfStolenStones: Int
                 
@@ -91,6 +92,8 @@ class Board {
                 transferFromTransitToCurrentPocket()
             }
         }
+        
+        return false
     }
     
     func getGoalForPlayerNumber(playerNumber: Int) -> Pocket {
