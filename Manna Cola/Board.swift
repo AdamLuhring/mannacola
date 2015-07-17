@@ -10,12 +10,11 @@ import Foundation
 
 class Board {
     var sides = [Side]()
+    let numberOfPocketsPerSide = 6
     
     init (numberOfSides: Int) {
-        let numberOfPocketsPerSide = 6
-        
         for _ in 0...(numberOfSides - 1) {
-            let newSide = Side(numberOfPockets: numberOfPocketsPerSide)
+            let newSide = Side(numberOfPockets: self.numberOfPocketsPerSide)
             sides.append(newSide)
         }
     }
@@ -24,6 +23,7 @@ class Board {
         // Adjust board pocket counts to reflect how Mancala works.
         let selectedPocket = self.sides[OnSideNumber].pockets[pocketNumber]
         var currentSideNumber: Int, currentPocketNumber: Int, currentPocket: Pocket
+        var depositCircumstance: DepositCircumstance = DepositCircumstance.Normal
         
         if selectedPocket.count < 1 {
             throw BoardError.EmptyPocket
@@ -46,15 +46,68 @@ class Board {
             currentPocket = self.sides[currentSideNumber].pockets[currentPocketNumber]
             
             // Perform check: depositing into opponent's goal?
+            if (currentPocket.position == 0) && (currentPocket !== self.sides[player.id].pockets[0]) {
+                depositCircumstance = DepositCircumstance.AnyStoneIntoOpponentGoal
+            }
             
-            // Perform check: last stone into goal
+            // Perform check: last stone into own goal
+            let goalOfPlayer = getGoalForPlayerNumber(player.id)
+            if currentPocket === goalOfPlayer {
+                depositCircumstance = DepositCircumstance.FinalStoneIntoOwnGoal
+            }
             
             // Perform check: last stone into empty across from stones for capture
+            if (currentPocket.count == 0) && (currentPocket !== goalOfPlayer) {
+                depositCircumstance = DepositCircumstance.FinalStoneIntoOwnEmptyPocketForCapture
+            }
             
-            // Transfer one stone from the moving pile to this pocket
-            currentPocket.count++
-            numberOfStonesRemainingInTransit--
+            func transferFromTransitToCurrentPocket() {
+                // Transfer one stone from the moving pile to this pocket
+                currentPocket.count++
+                numberOfStonesRemainingInTransit--
+            }
+            
+            // Handle special depositing situations
+            switch depositCircumstance {
+            case .AnyStoneIntoOpponentGoal:
+                continue
+            case .FinalStoneIntoOwnGoal:
+                transferFromTransitToCurrentPocket()
+                // new turn
+            case .FinalStoneIntoOwnEmptyPocketForCapture:
+                let pocketAcrossSideNumber: Int, pocketAcrossPocketNumber: Int, pocketAcross: Pocket, countOfStolenStones: Int
+                
+                (pocketAcrossSideNumber, pocketAcrossPocketNumber) = getAddressOfPocketAcrossFromPocket(currentSideNumber, pocketNumber: currentPocketNumber)
+                pocketAcross = getPocketAtAddress(pocketAcrossSideNumber, pocketNumber: pocketAcrossPocketNumber)
+                
+                // Steal stones!
+                countOfStolenStones = pocketAcross.count
+                pocketAcross.count = 0
+                
+                // Deposit stolen stones and final stone into player's own goal
+                goalOfPlayer.count += (countOfStolenStones + numberOfStonesRemainingInTransit)
+                numberOfStonesRemainingInTransit = 0
+            case .Normal:
+                transferFromTransitToCurrentPocket()
+            }
         }
+    }
+    
+    func getGoalForPlayerNumber(playerNumber: Int) -> Pocket {
+        return self.sides[playerNumber].pockets[0]
+    }
+    
+    func getAddressOfPocketAcrossFromPocket(sideNumber: Int, pocketNumber: Int) -> (Int, Int) {
+        let resultSideNumber: Int, resultPocketNumber: Int
+        
+        resultSideNumber = sideNumber + 1
+        resultPocketNumber = self.numberOfPocketsPerSide - pocketNumber + 1
+        
+        return (resultSideNumber, resultPocketNumber)
+    }
+    
+    func getPocketAtAddress(sideNumber: Int, pocketNumber: Int) -> Pocket {
+        return self.sides[sideNumber].pockets[pocketNumber]
     }
     
     func getAddressOfNextPocket(currentSideNumber: Int, currentPocketNumber: Int) throws -> (Int, Int) {
@@ -109,6 +162,13 @@ class Board {
         
         return numberOfNextSide
     }
+}
+
+enum DepositCircumstance {
+    case Normal
+    case FinalStoneIntoOwnGoal
+    case AnyStoneIntoOpponentGoal
+    case FinalStoneIntoOwnEmptyPocketForCapture
 }
 
 enum BoardError: ErrorType {
