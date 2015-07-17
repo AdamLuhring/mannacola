@@ -21,7 +21,7 @@ class Player {
     
     static func registerTwoPlayers() -> (Player, Player) {
         let playerOne = Player(type: PlayerType.Human, id: 0)
-        let playerTwo = Player(type: PlayerType.Human, id: 1)
+        let playerTwo = Player(type: PlayerType.AI, id: 1, strategy: LeftStrategy())
         
         return (playerOne, playerTwo)
     }

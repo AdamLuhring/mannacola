@@ -20,7 +20,7 @@ class Board {
         }
     }
     
-    func someoneHasSelectedPocket(pocketNumber: Int, OnSideNumber: Int) throws {
+    func playerHasSelectedPocket(player: Player, pocketNumber: Int, OnSideNumber: Int) throws {
         // Adjust board pocket counts to reflect how Mancala works.
         let selectedPocket = self.sides[OnSideNumber].pockets[pocketNumber]
         var currentSideNumber: Int, currentPocketNumber: Int, currentPocket: Pocket
@@ -29,7 +29,7 @@ class Board {
             throw BoardError.EmptyPocket
         }
         
-        // With the above check, we can now assume this was a legal game choice
+        // Note: With the above check, we can now assume this was a legal game choice
         
         // Save the number of stones in this pocket, then empty the pocket
         var numberOfStonesRemainingInTransit = selectedPocket.count
@@ -44,6 +44,12 @@ class Board {
             // Move to the next pocket
             (currentSideNumber, currentPocketNumber) = try! getAddressOfNextPocket(currentSideNumber, currentPocketNumber: currentPocketNumber)
             currentPocket = self.sides[currentSideNumber].pockets[currentPocketNumber]
+            
+            // Perform check: depositing into opponent's goal?
+            
+            // Perform check: last stone into goal
+            
+            // Perform check: last stone into empty across from stones for capture
             
             // Transfer one stone from the moving pile to this pocket
             currentPocket.count++

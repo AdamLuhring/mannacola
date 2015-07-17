@@ -11,7 +11,7 @@ import Foundation
 class Game {
     var board: Board
     var players = [Player]()
-    var currentTurn: Player
+    var playerWithCurrentTurn: Player
     
     init () {
         self.board = Board(numberOfSides: 2)
@@ -24,27 +24,27 @@ class Game {
         
         let numberOfPlayerWithFirstTurn = 0 // Use this as a config, or set it to random one day
         
-        self.currentTurn = players[numberOfPlayerWithFirstTurn]
+        self.playerWithCurrentTurn = players[numberOfPlayerWithFirstTurn]
     }
     
     func nextPlayerTakesTurn() throws -> Int? {    // Returns the side number that should be enabled in the VC, if any
         // Switch current turn to next player
-        self.currentTurn = getNextPlayer(self.currentTurn)
+        self.playerWithCurrentTurn = getNextPlayer(self.playerWithCurrentTurn)
         
-        switch self.currentTurn.type {
+        switch self.playerWithCurrentTurn.type {
         case .AI:
             // Use this player's strategy to select a pocket
-            guard let strategyForCurrentTurn = self.currentTurn.strategy else {
+            guard let strategyForCurrentTurn = self.playerWithCurrentTurn.strategy else {
                 throw GameError.NoStrategyForAIPlayer
             }
             
-            let selectedPocketNumber = strategyForCurrentTurn.determinePocketSelectionForPlayer(currentTurn.id, board: self.board)
-            let selectedSideNumber = self.currentTurn.id // i.e. the player's own side
+            let selectedPocketNumber = strategyForCurrentTurn.determinePocketSelectionForPlayer(playerWithCurrentTurn.id, board: self.board)
+            let selectedSideNumber = self.playerWithCurrentTurn.id // i.e. the player's own side
             
             
             // Try to select this pocket. If the pocket is empty, the player loses automatically
             do {
-                try self.board.someoneHasSelectedPocket(selectedPocketNumber, OnSideNumber: selectedSideNumber)
+                try self.board.playerHasSelectedPocket(playerWithCurrentTurn, pocketNumber: selectedPocketNumber, OnSideNumber: selectedSideNumber)
             } catch BoardError.EmptyPocket {
                 throw GameError.GameForfeitedViaEmptyPocketSelection
             } catch {
@@ -55,7 +55,7 @@ class Game {
             
         case .Human:
             // Return the int of the player's side that should be enabled (We'll wait for the human)
-            let sideNumberOfPlayerWithCurrentTurn = self.currentTurn.id
+            let sideNumberOfPlayerWithCurrentTurn = self.playerWithCurrentTurn.id
             
             return sideNumberOfPlayerWithCurrentTurn
         }

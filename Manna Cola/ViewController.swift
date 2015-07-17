@@ -17,7 +17,7 @@ class ViewController: UIViewController {
         // Do any additional setup after loading the view, typically from a nib.
         
         // Disable all sides who aren't the active player (current turn)
-        let numberOfPlayerWithCurrentTurn = self.game.currentTurn.id
+        let numberOfPlayerWithCurrentTurn = self.game.playerWithCurrentTurn.id
         disableAllSidesExcept(numberOfPlayerWithCurrentTurn)
     }
 
@@ -32,7 +32,7 @@ class ViewController: UIViewController {
     @IBOutlet weak var player0pocket6: UIButton!
     @IBAction func selectedSide0Pocket6(sender: AnyObject) {
         do {
-            try game.board.someoneHasSelectedPocket(6, OnSideNumber: 0)
+            try game.board.playerHasSelectedPocket(game.players[0], pocketNumber: 6, OnSideNumber: 0)
         } catch {
             displayGameOverAlert()
         }
@@ -43,7 +43,7 @@ class ViewController: UIViewController {
     @IBOutlet weak var player0pocket5: UIButton!
     @IBAction func selectedSide0Pocket5(sender: AnyObject) {
         do {
-            try game.board.someoneHasSelectedPocket(5, OnSideNumber: 0)
+            try game.board.playerHasSelectedPocket(game.players[0], pocketNumber: 5, OnSideNumber: 0)
         } catch {
             displayGameOverAlert()
         }
@@ -54,7 +54,7 @@ class ViewController: UIViewController {
     @IBOutlet weak var player0pocket4: UIButton!
     @IBAction func selectedSide0Pocket4(sender: AnyObject) {
         do {
-            try game.board.someoneHasSelectedPocket(4, OnSideNumber: 0)
+            try game.board.playerHasSelectedPocket(game.players[0], pocketNumber: 4, OnSideNumber: 0)
         } catch {
             displayGameOverAlert()
         }
@@ -65,7 +65,7 @@ class ViewController: UIViewController {
     @IBOutlet weak var player0pocket3: UIButton!
     @IBAction func selectedSide0Pocket3(sender: AnyObject) {
         do {
-            try game.board.someoneHasSelectedPocket(3, OnSideNumber: 0)
+            try game.board.playerHasSelectedPocket(game.players[0], pocketNumber: 3, OnSideNumber: 0)
         } catch {
             displayGameOverAlert()
         }
@@ -76,7 +76,7 @@ class ViewController: UIViewController {
     @IBOutlet weak var player0pocket2: UIButton!
     @IBAction func selectedSide0Pocket2(sender: AnyObject) {
         do {
-            try game.board.someoneHasSelectedPocket(2, OnSideNumber: 0)
+            try game.board.playerHasSelectedPocket(game.players[0], pocketNumber: 2, OnSideNumber: 0)
         } catch {
             displayGameOverAlert()
         }
@@ -87,7 +87,7 @@ class ViewController: UIViewController {
     @IBOutlet weak var player0pocket1: UIButton!
     @IBAction func selectedSide0Pocket1(sender: AnyObject) {
         do {
-            try game.board.someoneHasSelectedPocket(1, OnSideNumber: 0)
+            try game.board.playerHasSelectedPocket(game.players[0], pocketNumber: 1, OnSideNumber: 0)
         } catch {
             displayGameOverAlert()
         }
@@ -98,7 +98,7 @@ class ViewController: UIViewController {
     @IBOutlet weak var player1pocket6: UIButton!
     @IBAction func selectedSide1Pocket6(sender: AnyObject) {
         do {
-            try game.board.someoneHasSelectedPocket(6, OnSideNumber: 1)
+            try game.board.playerHasSelectedPocket(game.players[1], pocketNumber: 6, OnSideNumber: 1)
         } catch {
             displayGameOverAlert()
         }
@@ -109,7 +109,7 @@ class ViewController: UIViewController {
     @IBOutlet weak var player1pocket5: UIButton!
     @IBAction func selectedSide1Pocket5(sender: AnyObject) {
         do {
-            try game.board.someoneHasSelectedPocket(5, OnSideNumber: 1)
+            try game.board.playerHasSelectedPocket(game.players[1], pocketNumber: 5, OnSideNumber: 1)
         } catch {
             displayGameOverAlert()
         }
@@ -120,7 +120,7 @@ class ViewController: UIViewController {
     @IBOutlet weak var player1pocket4: UIButton!
     @IBAction func selectedSide1Pocket4(sender: AnyObject) {
         do {
-            try game.board.someoneHasSelectedPocket(4, OnSideNumber: 1)
+            try game.board.playerHasSelectedPocket(game.players[1], pocketNumber: 4, OnSideNumber: 1)
         } catch {
             displayGameOverAlert()
         }
@@ -131,7 +131,7 @@ class ViewController: UIViewController {
     @IBOutlet weak var player1pocket3: UIButton!
     @IBAction func selectedSide1Pocket3(sender: AnyObject) {
         do {
-            try game.board.someoneHasSelectedPocket(3, OnSideNumber: 1)
+            try game.board.playerHasSelectedPocket(game.players[1], pocketNumber: 3, OnSideNumber: 1)
         } catch {
             displayGameOverAlert()
         }
@@ -142,7 +142,7 @@ class ViewController: UIViewController {
     @IBOutlet weak var player1pocket2: UIButton!
     @IBAction func selectedSide1Pocket2(sender: AnyObject) {
         do {
-            try game.board.someoneHasSelectedPocket(2, OnSideNumber: 1)
+            try game.board.playerHasSelectedPocket(game.players[1], pocketNumber: 2, OnSideNumber: 1)
         } catch {
             displayGameOverAlert()
         }
@@ -153,7 +153,7 @@ class ViewController: UIViewController {
     @IBOutlet weak var player1pocket1: UIButton!
     @IBAction func selectedSide1Pocket1(sender: AnyObject) {
         do {
-            try game.board.someoneHasSelectedPocket(1, OnSideNumber: 1)
+            try game.board.playerHasSelectedPocket(game.players[1], pocketNumber: 1, OnSideNumber: 1)
         } catch {
             displayGameOverAlert()
         }
