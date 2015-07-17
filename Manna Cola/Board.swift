@@ -100,7 +100,7 @@ class Board {
     func getAddressOfPocketAcrossFromPocket(sideNumber: Int, pocketNumber: Int) -> (Int, Int) {
         let resultSideNumber: Int, resultPocketNumber: Int
         
-        resultSideNumber = sideNumber + 1
+        resultSideNumber = getNumberOfNextSide(sideNumber)
         resultPocketNumber = self.numberOfPocketsPerSide - pocketNumber + 1
         
         return (resultSideNumber, resultPocketNumber)
