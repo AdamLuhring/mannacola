@@ -2,7 +2,6 @@
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="8121.17" systemVersion="14E46" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="BYZ-38-t0r">
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="8101.14"/>
-        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
     <scenes>
         <!--View Controller-->
@@ -17,144 +16,144 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Dvm-AH-GOS" userLabel="gameBoard">
-                                <rect key="frame" x="79" y="20" width="443" height="298"/>
+                            <stackView opaque="NO" contentMode="scaleToFill" fixedFrame="YES" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="OMM-CR-VSs">
+                                <rect key="frame" x="107" y="28" width="387" height="270"/>
                                 <subviews>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="0" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="QNV-zm-OJL" userLabel="goalForPlayer1">
-                                        <rect key="frame" x="333" y="110" width="62" height="72"/>
-                                        <fontDescription key="fontDescription" type="system" pointSize="35"/>
-                                        <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
-                                        <nil key="highlightedColor"/>
-                                    </label>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="0" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="HoR-uO-A95" userLabel="goalForPlayer2">
-                                        <rect key="frame" x="48" y="110" width="62" height="72"/>
-                                        <fontDescription key="fontDescription" type="system" pointSize="35"/>
-                                        <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
-                                        <nil key="highlightedColor"/>
-                                    </label>
-                                    <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="iMV-ek-wZC" userLabel="positionsForPlayer2">
-                                        <rect key="frame" x="71" y="34" width="301" height="74"/>
+                                    <stackView opaque="NO" contentMode="scaleToFill" fixedFrame="YES" axis="vertical" alignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="vHe-Kz-j7Z">
+                                        <rect key="frame" x="0.0" y="0.0" width="387" height="270"/>
                                         <subviews>
-                                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="BB7-Ks-Uy5" userLabel="position6">
-                                                <rect key="frame" x="18" y="20" width="55" height="34"/>
-                                                <fontDescription key="fontDescription" type="system" pointSize="34"/>
-                                                <state key="normal" title="4"/>
-                                                <connections>
-                                                    <action selector="selectedSide1Pocket1:" destination="BYZ-38-t0r" eventType="touchUpInside" id="hxp-Hj-CGp"/>
-                                                </connections>
-                                            </button>
-                                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="F2y-o2-AVI" userLabel="position5">
-                                                <rect key="frame" x="60" y="20" width="55" height="34"/>
-                                                <fontDescription key="fontDescription" type="system" pointSize="34"/>
-                                                <state key="normal" title="4"/>
-                                                <connections>
-                                                    <action selector="selectedSide1Pocket2:" destination="BYZ-38-t0r" eventType="touchUpInside" id="tAD-Gd-LFd"/>
-                                                </connections>
-                                            </button>
-                                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="5M5-dA-1YB" userLabel="position4">
-                                                <rect key="frame" x="102" y="20" width="55" height="34"/>
-                                                <fontDescription key="fontDescription" type="system" pointSize="34"/>
-                                                <state key="normal" title="4"/>
-                                                <connections>
-                                                    <action selector="selectedSide1Pocket3:" destination="BYZ-38-t0r" eventType="touchUpInside" id="cka-bD-2Z2"/>
-                                                </connections>
-                                            </button>
-                                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="WaD-Y4-fm0" userLabel="position3">
-                                                <rect key="frame" x="144" y="20" width="55" height="34"/>
-                                                <fontDescription key="fontDescription" type="system" pointSize="34"/>
-                                                <state key="normal" title="4"/>
-                                                <connections>
-                                                    <action selector="selectedSide1Pocket4:" destination="BYZ-38-t0r" eventType="touchUpInside" id="ngk-XA-Mm3"/>
-                                                </connections>
-                                            </button>
-                                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="5yc-JP-QMi" userLabel="position2">
-                                                <rect key="frame" x="186" y="20" width="55" height="34"/>
-                                                <fontDescription key="fontDescription" type="system" pointSize="34"/>
-                                                <state key="normal" title="4"/>
-                                                <connections>
-                                                    <action selector="selectedSide1Pocket5:" destination="BYZ-38-t0r" eventType="touchUpInside" id="Guc-V6-ZSG"/>
-                                                </connections>
-                                            </button>
-                                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="LDe-2T-Q3s" userLabel="position1">
-                                                <rect key="frame" x="228" y="20" width="55" height="34"/>
-                                                <fontDescription key="fontDescription" type="system" pointSize="34"/>
-                                                <state key="normal" title="4"/>
-                                                <connections>
-                                                    <action selector="selectedSide1Pocket6:" destination="BYZ-38-t0r" eventType="touchUpInside" id="HFN-LT-DoK"/>
-                                                </connections>
-                                            </button>
+                                            <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Dvm-AH-GOS" userLabel="gameBoard">
+                                                <rect key="frame" x="0.0" y="0.0" width="387" height="270"/>
+                                                <subviews>
+                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="0" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="QNV-zm-OJL" userLabel="goalForPlayer1">
+                                                        <rect key="frame" x="305" y="96" width="62" height="72"/>
+                                                        <fontDescription key="fontDescription" type="system" pointSize="35"/>
+                                                        <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                                        <nil key="highlightedColor"/>
+                                                    </label>
+                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="0" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="HoR-uO-A95" userLabel="goalForPlayer2">
+                                                        <rect key="frame" x="20" y="96" width="62" height="72"/>
+                                                        <fontDescription key="fontDescription" type="system" pointSize="35"/>
+                                                        <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                                        <nil key="highlightedColor"/>
+                                                    </label>
+                                                    <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="iMV-ek-wZC" userLabel="positionsForPlayer2">
+                                                        <rect key="frame" x="43" y="20" width="301" height="74"/>
+                                                        <subviews>
+                                                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="BB7-Ks-Uy5" userLabel="position6">
+                                                                <rect key="frame" x="18" y="20" width="55" height="34"/>
+                                                                <fontDescription key="fontDescription" type="system" pointSize="34"/>
+                                                                <state key="normal" title="4"/>
+                                                                <connections>
+                                                                    <action selector="selectedSide1Pocket1:" destination="BYZ-38-t0r" eventType="touchUpInside" id="hxp-Hj-CGp"/>
+                                                                </connections>
+                                                            </button>
+                                                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="F2y-o2-AVI" userLabel="position5">
+                                                                <rect key="frame" x="60" y="20" width="55" height="34"/>
+                                                                <fontDescription key="fontDescription" type="system" pointSize="34"/>
+                                                                <state key="normal" title="4"/>
+                                                                <connections>
+                                                                    <action selector="selectedSide1Pocket2:" destination="BYZ-38-t0r" eventType="touchUpInside" id="tAD-Gd-LFd"/>
+                                                                </connections>
+                                                            </button>
+                                                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="5M5-dA-1YB" userLabel="position4">
+                                                                <rect key="frame" x="102" y="20" width="55" height="34"/>
+                                                                <fontDescription key="fontDescription" type="system" pointSize="34"/>
+                                                                <state key="normal" title="4"/>
+                                                                <connections>
+                                                                    <action selector="selectedSide1Pocket3:" destination="BYZ-38-t0r" eventType="touchUpInside" id="cka-bD-2Z2"/>
+                                                                </connections>
+                                                            </button>
+                                                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="WaD-Y4-fm0" userLabel="position3">
+                                                                <rect key="frame" x="144" y="20" width="55" height="34"/>
+                                                                <fontDescription key="fontDescription" type="system" pointSize="34"/>
+                                                                <state key="normal" title="4"/>
+                                                                <connections>
+                                                                    <action selector="selectedSide1Pocket4:" destination="BYZ-38-t0r" eventType="touchUpInside" id="ngk-XA-Mm3"/>
+                                                                </connections>
+                                                            </button>
+                                                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="5yc-JP-QMi" userLabel="position2">
+                                                                <rect key="frame" x="186" y="20" width="55" height="34"/>
+                                                                <fontDescription key="fontDescription" type="system" pointSize="34"/>
+                                                                <state key="normal" title="4"/>
+                                                                <connections>
+                                                                    <action selector="selectedSide1Pocket5:" destination="BYZ-38-t0r" eventType="touchUpInside" id="Guc-V6-ZSG"/>
+                                                                </connections>
+                                                            </button>
+                                                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="LDe-2T-Q3s" userLabel="position1">
+                                                                <rect key="frame" x="228" y="20" width="55" height="34"/>
+                                                                <fontDescription key="fontDescription" type="system" pointSize="34"/>
+                                                                <state key="normal" title="4"/>
+                                                                <connections>
+                                                                    <action selector="selectedSide1Pocket6:" destination="BYZ-38-t0r" eventType="touchUpInside" id="HFN-LT-DoK"/>
+                                                                </connections>
+                                                            </button>
+                                                        </subviews>
+                                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                                    </view>
+                                                    <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="fBX-bS-3rJ" userLabel="positionsForPlayer1">
+                                                        <rect key="frame" x="43" y="176" width="301" height="74"/>
+                                                        <subviews>
+                                                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="GLA-Vy-yIW" userLabel="position1">
+                                                                <rect key="frame" x="18" y="20" width="55" height="34"/>
+                                                                <fontDescription key="fontDescription" type="system" pointSize="34"/>
+                                                                <state key="normal" title="4"/>
+                                                                <connections>
+                                                                    <action selector="selectedSide0Pocket6:" destination="BYZ-38-t0r" eventType="touchUpInside" id="Eyz-6G-rZX"/>
+                                                                </connections>
+                                                            </button>
+                                                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="E2z-56-S88" userLabel="position2">
+                                                                <rect key="frame" x="60" y="20" width="55" height="34"/>
+                                                                <fontDescription key="fontDescription" type="system" pointSize="34"/>
+                                                                <state key="normal" title="4"/>
+                                                                <connections>
+                                                                    <action selector="selectedSide0Pocket5:" destination="BYZ-38-t0r" eventType="touchUpInside" id="Y1k-LC-cFX"/>
+                                                                </connections>
+                                                            </button>
+                                                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="WAl-SD-XC8" userLabel="position3">
+                                                                <rect key="frame" x="102" y="20" width="55" height="34"/>
+                                                                <fontDescription key="fontDescription" type="system" pointSize="34"/>
+                                                                <state key="normal" title="4"/>
+                                                                <connections>
+                                                                    <action selector="selectedSide0Pocket4:" destination="BYZ-38-t0r" eventType="touchUpInside" id="U9K-t8-RV7"/>
+                                                                </connections>
+                                                            </button>
+                                                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="M5e-hd-0QI" userLabel="position4">
+                                                                <rect key="frame" x="144" y="20" width="55" height="34"/>
+                                                                <fontDescription key="fontDescription" type="system" pointSize="34"/>
+                                                                <state key="normal" title="4"/>
+                                                                <connections>
+                                                                    <action selector="selectedSide0Pocket3:" destination="BYZ-38-t0r" eventType="touchUpInside" id="Ivn-Wf-H04"/>
+                                                                </connections>
+                                                            </button>
+                                                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Jar-6z-OBV" userLabel="position5">
+                                                                <rect key="frame" x="186" y="20" width="55" height="34"/>
+                                                                <fontDescription key="fontDescription" type="system" pointSize="34"/>
+                                                                <state key="normal" title="4"/>
+                                                                <connections>
+                                                                    <action selector="selectedSide0Pocket2:" destination="BYZ-38-t0r" eventType="touchUpInside" id="j1d-tx-blC"/>
+                                                                </connections>
+                                                            </button>
+                                                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="kFW-a3-rue" userLabel="position6">
+                                                                <rect key="frame" x="228" y="20" width="55" height="34"/>
+                                                                <fontDescription key="fontDescription" type="system" pointSize="34"/>
+                                                                <state key="normal" title="4"/>
+                                                                <connections>
+                                                                    <action selector="selectedSide0Pocket1:" destination="BYZ-38-t0r" eventType="touchUpInside" id="8Vg-w1-RRg"/>
+                                                                </connections>
+                                                            </button>
+                                                        </subviews>
+                                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                                    </view>
+                                                </subviews>
+                                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                            </view>
                                         </subviews>
-                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                    </view>
-                                    <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="fBX-bS-3rJ" userLabel="positionsForPlayer1">
-                                        <rect key="frame" x="71" y="190" width="301" height="74"/>
-                                        <subviews>
-                                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="GLA-Vy-yIW" userLabel="position1">
-                                                <rect key="frame" x="18" y="20" width="55" height="34"/>
-                                                <fontDescription key="fontDescription" type="system" pointSize="34"/>
-                                                <state key="normal" title="4"/>
-                                                <connections>
-                                                    <action selector="selectedSide0Pocket6:" destination="BYZ-38-t0r" eventType="touchUpInside" id="Eyz-6G-rZX"/>
-                                                </connections>
-                                            </button>
-                                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="E2z-56-S88" userLabel="position2">
-                                                <rect key="frame" x="60" y="20" width="55" height="34"/>
-                                                <fontDescription key="fontDescription" type="system" pointSize="34"/>
-                                                <state key="normal" title="4"/>
-                                                <connections>
-                                                    <action selector="selectedSide0Pocket5:" destination="BYZ-38-t0r" eventType="touchUpInside" id="Y1k-LC-cFX"/>
-                                                </connections>
-                                            </button>
-                                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="WAl-SD-XC8" userLabel="position3">
-                                                <rect key="frame" x="102" y="20" width="55" height="34"/>
-                                                <fontDescription key="fontDescription" type="system" pointSize="34"/>
-                                                <state key="normal" title="4"/>
-                                                <connections>
-                                                    <action selector="selectedSide0Pocket4:" destination="BYZ-38-t0r" eventType="touchUpInside" id="U9K-t8-RV7"/>
-                                                </connections>
-                                            </button>
-                                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="M5e-hd-0QI" userLabel="position4">
-                                                <rect key="frame" x="144" y="20" width="55" height="34"/>
-                                                <fontDescription key="fontDescription" type="system" pointSize="34"/>
-                                                <state key="normal" title="4"/>
-                                                <connections>
-                                                    <action selector="selectedSide0Pocket3:" destination="BYZ-38-t0r" eventType="touchUpInside" id="Ivn-Wf-H04"/>
-                                                </connections>
-                                            </button>
-                                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Jar-6z-OBV" userLabel="position5">
-                                                <rect key="frame" x="186" y="20" width="55" height="34"/>
-                                                <fontDescription key="fontDescription" type="system" pointSize="34"/>
-                                                <state key="normal" title="4"/>
-                                                <connections>
-                                                    <action selector="selectedSide0Pocket2:" destination="BYZ-38-t0r" eventType="touchUpInside" id="j1d-tx-blC"/>
-                                                </connections>
-                                            </button>
-                                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="kFW-a3-rue" userLabel="position6">
-                                                <rect key="frame" x="228" y="20" width="55" height="34"/>
-                                                <fontDescription key="fontDescription" type="system" pointSize="34"/>
-                                                <state key="normal" title="4"/>
-                                                <connections>
-                                                    <action selector="selectedSide0Pocket1:" destination="BYZ-38-t0r" eventType="touchUpInside" id="8Vg-w1-RRg"/>
-                                                </connections>
-                                            </button>
-                                        </subviews>
-                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                    </view>
+                                    </stackView>
                                 </subviews>
-                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="298" id="xVY-dz-QG7"/>
-                                </constraints>
-                            </view>
+                            </stackView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
-                        <constraints>
-                            <constraint firstItem="Dvm-AH-GOS" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="8eR-WD-RNe"/>
-                            <constraint firstItem="Dvm-AH-GOS" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="Aoi-kC-P3w"/>
-                            <constraint firstItem="Dvm-AH-GOS" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" constant="59" id="g8V-KA-I5R"/>
-                            <constraint firstItem="Dvm-AH-GOS" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" id="slW-Y0-sfg"/>
-                            <constraint firstItem="Dvm-AH-GOS" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" id="toE-9d-KLO"/>
-                        </constraints>
                     </view>
                     <connections>
                         <outlet property="goalForPlayer0" destination="QNV-zm-OJL" id="1mr-0z-JTj"/>
