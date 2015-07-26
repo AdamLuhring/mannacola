@@ -159,9 +159,9 @@ class ViewController: UIViewController {
         tryResumingGameTurnLoop()
     }
     
-    func updateCountsOnControls() {
-        let side0pockets = self.game.board.sides[0].pockets
-        let side1pockets = self.game.board.sides[1].pockets
+    func updateCountsOnControls(toBoard board: Board) {
+        let side0pockets = board.sides[0].pockets
+        let side1pockets = board.sides[1].pockets
         
         self.setButtonTextToNumber(player0pocket6, number: side0pockets[6].count)
         self.setButtonTextToNumber(player0pocket5, number: side0pockets[5].count)
@@ -220,6 +220,29 @@ class ViewController: UIViewController {
         }
     }
     
+    func humanHasSelectedPocket(withAddress pocketAddress: PocketAddress) {
+        let updatedBoard: Board
+        let currentPlayer: Player
+        var gameEndResult: GameEndResult?
+        
+        (updatedBoard, currentPlayer, gameEndResult) = game.processSelectionFromViewController(pocketAddress)
+        
+        // Has the game ended?
+        if gameEndResult != nil {
+            // The game has ended... deal with this.
+            
+            return
+        }
+        
+        // The game hasn't ended, so let's update the ViewController.
+        
+        // Update the pocket counts
+        self.updateCountsOnControls(toBoard: updatedBoard)
+        
+        // Disable pockets for the inactive side(s)
+        self.disableAllSidesExcept(currentPlayer.id)
+    }
+    
     func displayGameOverAlert() {
         let alert = UIAlertController(title: "Game has been forfeited by player", message: nil, preferredStyle: UIAlertControllerStyle.Alert)
         
@@ -238,7 +261,7 @@ class ViewController: UIViewController {
         do {
             let reason = try game.proceedWithTurnLoop()
             if reason == ReasonForExitingTurnLoop.WaitingOnHuman {
-                self.waitForHumanSelectionOnSide(game.playerWithCurrentTurn.id)
+                //self.waitForHumanSelectionOnSide(game.playerWithCurrentTurn.id)
             }
         } catch {
             self.displayMessageFromGame("Caught an error from turnLoop.")
@@ -255,8 +278,8 @@ class ViewController: UIViewController {
         }
     }
     
-    func waitForHumanSelectionOnSide(sideNumber: Int) {
-        updateCountsOnControls()
-        disableAllSidesExcept(sideNumber)
-    }
+//    func waitForHumanSelectionOnSide(sideNumber: Int) {
+//        updateCountsOnControls()
+//        disableAllSidesExcept(sideNumber)
+//    }
 }

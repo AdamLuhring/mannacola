@@ -14,6 +14,7 @@
 		37D7D8AB1B57472F0056C9B9 /* LeftStrategy.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37D7D8AA1B57472F0056C9B9 /* LeftStrategy.swift */; };
 		37D7D8AD1B5998D50056C9B9 /* Turn.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37D7D8AC1B5998D50056C9B9 /* Turn.swift */; };
 		37D7D8AF1B59A3020056C9B9 /* PocketAddress.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37D7D8AE1B59A3020056C9B9 /* PocketAddress.swift */; };
+		37D7D8B11B5C04880056C9B9 /* GameEndResult.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37D7D8B01B5C04880056C9B9 /* GameEndResult.swift */; };
 		37D816031B4DA7EC00BA1AB1 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37D816021B4DA7EC00BA1AB1 /* AppDelegate.swift */; };
 		37D816051B4DA7EC00BA1AB1 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37D816041B4DA7EC00BA1AB1 /* ViewController.swift */; };
 		37D816081B4DA7EC00BA1AB1 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 37D816061B4DA7EC00BA1AB1 /* Main.storyboard */; };
@@ -50,6 +51,7 @@
 		37D7D8AA1B57472F0056C9B9 /* LeftStrategy.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LeftStrategy.swift; sourceTree = "<group>"; };
 		37D7D8AC1B5998D50056C9B9 /* Turn.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Turn.swift; path = ../Turn.swift; sourceTree = "<group>"; };
 		37D7D8AE1B59A3020056C9B9 /* PocketAddress.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = PocketAddress.swift; path = ../PocketAddress.swift; sourceTree = "<group>"; };
+		37D7D8B01B5C04880056C9B9 /* GameEndResult.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GameEndResult.swift; sourceTree = "<group>"; };
 		37D815FF1B4DA7EC00BA1AB1 /* Manna Cola.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Manna Cola.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		37D816021B4DA7EC00BA1AB1 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		37D816041B4DA7EC00BA1AB1 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -104,6 +106,7 @@
 			isa = PBXGroup;
 			children = (
 				37D7D8AC1B5998D50056C9B9 /* Turn.swift */,
+				37D7D8B01B5C04880056C9B9 /* GameEndResult.swift */,
 				37D816351B4DDAD200BA1AB1 /* Game.swift */,
 			);
 			name = Game;
@@ -320,6 +323,7 @@
 				37D7D8A61B57437E0056C9B9 /* Player.swift in Sources */,
 				37C516401B55E47C00613033 /* Side.swift in Sources */,
 				37D7D8AB1B57472F0056C9B9 /* LeftStrategy.swift in Sources */,
+				37D7D8B11B5C04880056C9B9 /* GameEndResult.swift in Sources */,
 				37D816051B4DA7EC00BA1AB1 /* ViewController.swift in Sources */,
 				37D7D8AF1B59A3020056C9B9 /* PocketAddress.swift in Sources */,
 				37D7D8A81B5746C30056C9B9 /* Strategy.swift in Sources */,

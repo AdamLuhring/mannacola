@@ -13,6 +13,7 @@ class Game {
     var players = [Player]()
     var playerWithCurrentTurn: Player
     var turnLoopHasBeenInitiated = false
+    var countOfTurns = 0
     
     init () {
         self.board = Board(numberOfSides: 2)
@@ -26,6 +27,21 @@ class Game {
         let numberOfPlayerWithFirstTurn = 0 // Use this as a config, or set it to random one day
         
         self.playerWithCurrentTurn = players[numberOfPlayerWithFirstTurn]
+    }
+    
+    func processSelectionFromViewController(selectedPocket: PocketAddress) -> (Board, Player, GameEndResult?) {
+        let gameEndResult: GameEndResult? = nil // only set to nil temporarily
+        
+        // do some checks?
+        
+        self.playerWithCurrentTurnHasSelectedPocket(withPosition: selectedPocket.pocket)
+        
+        return (self.board, self.playerWithCurrentTurn, gameEndResult)
+    }
+    
+    func playerWithCurrentTurnHasSelectedPocket(withPosition pocketNumber: Int) -> GameEndResult? {
+        let gameEndResult: GameEndResult? = nil
+        return gameEndResult
     }
     
     func proceedWithTurnLoop() throws -> ReasonForExitingTurnLoop? {
